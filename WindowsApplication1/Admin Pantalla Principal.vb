@@ -10,6 +10,7 @@
         'TODO: This line of code loads data into the 'DataSet1.Estado' table. You can move, or remove it, as needed.
         Me.EstadoTableAdapter.Fill(Me.DataSet1.Estado)
         Label3.Text = DateAndTime.Today.ToLongDateString
+        ComboBox1.Text = "Pendiente"
 
         Try
             Me.ConsultaSolicitudesEstadoTableAdapter.Fill(Me.DataSet1.ConsultaSolicitudesEstado, "PEN")
@@ -70,3 +71,5 @@
 
     End Sub
 End Class
+
+'agregar comentario
