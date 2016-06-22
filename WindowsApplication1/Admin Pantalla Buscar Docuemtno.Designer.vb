@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form3
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form3
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -42,14 +42,14 @@ Partial Class Form3
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.AgregarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.MantenimientoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -195,11 +195,11 @@ Partial Class Form3
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(872, 25)
-        Me.ToolStrip1.TabIndex = 43
+        Me.ToolStrip1.TabIndex = 50
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripButton5
@@ -209,14 +209,6 @@ Partial Class Form3
         Me.ToolStripButton5.Name = "ToolStripButton5"
         Me.ToolStripButton5.Size = New System.Drawing.Size(56, 22)
         Me.ToolStripButton5.Text = "Inicio"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(84, 22)
-        Me.ToolStripButton2.Text = "Solicitudes"
         '
         'ToolStripButton3
         '
@@ -247,39 +239,40 @@ Partial Class Form3
         Me.BuscarDocumentoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.BuscarDocumentoToolStripMenuItem.Text = "Buscar Documento"
         '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(760, 5)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 46
-        Me.TextBox5.Text = "Administrador"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(708, 8)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 13)
-        Me.Label3.TabIndex = 45
-        Me.Label3.Text = "Usuario:"
-        '
         'ToolStripButton1
         '
+        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(133, 22)
-        Me.ToolStripButton1.Text = "Pantalla de Usuarios"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(81, 22)
+        Me.ToolStripButton1.Text = "Usuarios"
+        '
+        'MantenimientoUsuariosToolStripMenuItem
+        '
+        Me.MantenimientoUsuariosToolStripMenuItem.Name = "MantenimientoUsuariosToolStripMenuItem"
+        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.MantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(134, 22)
+        Me.ToolStripButton2.Text = "Pantalla De Usuarios"
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 506)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox2)
@@ -320,12 +313,12 @@ Partial Class Form3
     Friend WithEvents Label2 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton5 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents ToolStripButton4 As ToolStripDropDownButton
     Friend WithEvents AgregarDocumentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BuscarDocumentoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton1 As ToolStripDropDownButton
+    Friend WithEvents MantenimientoUsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

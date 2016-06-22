@@ -91,12 +91,6 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuario Solicitud Alerta.Designer.vb">
-      <DependentUpon>Usuario Solicitud Alerta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario Solicitud Alerta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Usuario Pantalla Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuario Solicitud Alerta.resx">
-      <DependentUpon>Usuario Solicitud Alerta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario Pantalla Principal.resx">
       <DependentUpon>Usuario Pantalla Principal.vb</DependentUpon>
