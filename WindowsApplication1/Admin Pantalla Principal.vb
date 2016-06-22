@@ -66,6 +66,8 @@
     End Sub
 
     Private Sub ConsultaSolicitudesEstadoDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ConsultaSolicitudesEstadoDataGridView.CellContentClick
+        Dim row As DataGridViewRow = ConsultaSolicitudesEstadoDataGridView.CurrentRow
+        Jalar = CStr(row.Cells(0).Value)
         Form7.Show()
 
     End Sub

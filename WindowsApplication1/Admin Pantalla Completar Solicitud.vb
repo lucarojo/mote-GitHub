@@ -31,4 +31,14 @@
         Me.Close()
 
     End Sub
+
+    Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox2.Text = Jalar
+        Try
+            Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, TextBox2.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 End Class

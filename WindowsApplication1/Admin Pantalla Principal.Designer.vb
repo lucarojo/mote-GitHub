@@ -37,12 +37,6 @@ Partial Class Form4
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ConsultaSolicitudesEstadoDataGridView = New System.Windows.Forms.DataGridView()
-        Me.CompletarSolicitud = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsultaSolicitudesEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1 = New WindowsApplication1.DataSet1()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -53,6 +47,13 @@ Partial Class Form4
         Me.SolicitudesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SolicitudesTableAdapter = New WindowsApplication1.DataSet1TableAdapters.SolicitudesTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SolicitudID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CompletarSolicitud = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.ConsultaSolicitudesEstadoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaSolicitudesEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,56 +162,13 @@ Partial Class Form4
         Me.ConsultaSolicitudesEstadoDataGridView.AllowUserToDeleteRows = False
         Me.ConsultaSolicitudesEstadoDataGridView.AutoGenerateColumns = False
         Me.ConsultaSolicitudesEstadoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ConsultaSolicitudesEstadoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CompletarSolicitud, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.ConsultaSolicitudesEstadoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SolicitudID, Me.CompletarSolicitud, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.ConsultaSolicitudesEstadoDataGridView.DataSource = Me.ConsultaSolicitudesEstadoBindingSource
         Me.ConsultaSolicitudesEstadoDataGridView.Location = New System.Drawing.Point(12, 78)
         Me.ConsultaSolicitudesEstadoDataGridView.Name = "ConsultaSolicitudesEstadoDataGridView"
         Me.ConsultaSolicitudesEstadoDataGridView.ReadOnly = True
         Me.ConsultaSolicitudesEstadoDataGridView.Size = New System.Drawing.Size(843, 436)
         Me.ConsultaSolicitudesEstadoDataGridView.TabIndex = 54
-        '
-        'CompletarSolicitud
-        '
-        Me.CompletarSolicitud.HeaderText = "CompletarSolicitud"
-        Me.CompletarSolicitud.Name = "CompletarSolicitud"
-        Me.CompletarSolicitud.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "NumeroSolicitud"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "NumeroSolicitud"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Fecha_Creacion"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha_Creacion"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Estado"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Estado"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Nombre_Solicitante"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre_Solicitante"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 200
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Numero_Cuenta_Solicitante"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Numero_Cuenta_Solicitante"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 200
         '
         'ConsultaSolicitudesEstadoBindingSource
         '
@@ -273,6 +231,59 @@ Partial Class Form4
         Me.Label1.TabIndex = 56
         Me.Label1.Text = "Estado de la Solicitud:"
         '
+        'SolicitudID
+        '
+        Me.SolicitudID.DataPropertyName = "SolicitudID"
+        Me.SolicitudID.HeaderText = "SolicitudID"
+        Me.SolicitudID.Name = "SolicitudID"
+        Me.SolicitudID.ReadOnly = True
+        Me.SolicitudID.Visible = False
+        '
+        'CompletarSolicitud
+        '
+        Me.CompletarSolicitud.HeaderText = "CompletarSolicitud"
+        Me.CompletarSolicitud.Name = "CompletarSolicitud"
+        Me.CompletarSolicitud.ReadOnly = True
+        Me.CompletarSolicitud.Text = "Completar"
+        Me.CompletarSolicitud.UseColumnTextForButtonValue = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "NumeroSolicitud"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "NumeroSolicitud"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Fecha_Creacion"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha_Creacion"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Estado"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Estado"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Nombre_Solicitante"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre_Solicitante"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 200
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Numero_Cuenta_Solicitante"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Numero_Cuenta_Solicitante"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 200
+        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,6 +331,7 @@ Partial Class Form4
     Friend WithEvents SolicitudesBindingSource As BindingSource
     Friend WithEvents SolicitudesTableAdapter As DataSet1TableAdapters.SolicitudesTableAdapter
     Friend WithEvents Label1 As Label
+    Friend WithEvents SolicitudID As DataGridViewTextBoxColumn
     Friend WithEvents CompletarSolicitud As DataGridViewButtonColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn

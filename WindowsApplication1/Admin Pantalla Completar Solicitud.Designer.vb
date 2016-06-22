@@ -22,18 +22,10 @@ Partial Class Form7
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Selected = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Carrera = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre_Alumno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Dim Nombre_SolicitanteLabel As System.Windows.Forms.Label
+        Dim Numero_Cuenta_SolicitanteLabel As System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
@@ -46,94 +38,36 @@ Partial Class Form7
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet1 = New WindowsApplication1.DataSet1()
+        Me.DocumentosDeSolicitudBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DocumentosDeSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.DocumentosDeSolicitudDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Descargar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Nombre_SolicitanteTextBox = New System.Windows.Forms.TextBox()
+        Me.Numero_Cuenta_SolicitanteTextBox = New System.Windows.Forms.TextBox()
+        Nombre_SolicitanteLabel = New System.Windows.Forms.Label()
+        Numero_Cuenta_SolicitanteLabel = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocumentosDeSolicitudDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(368, 40)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(233, 20)
-        Me.TextBox3.TabIndex = 25
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(318, 41)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 15)
-        Me.Label4.TabIndex = 24
-        Me.Label4.Text = "Correo"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 40)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(233, 20)
-        Me.TextBox1.TabIndex = 21
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 41)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 15)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Solicitante"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Selected, Me.Carrera, Me.Año, Me.Nombre_Alumno, Me.Nombre, Me.Descripción})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 91)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(692, 338)
-        Me.DataGridView1.TabIndex = 45
-        '
-        'Selected
-        '
-        Me.Selected.HeaderText = "Descargar"
-        Me.Selected.Name = "Selected"
-        Me.Selected.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Carrera
-        '
-        Me.Carrera.HeaderText = "Carrera"
-        Me.Carrera.Name = "Carrera"
-        Me.Carrera.Width = 300
-        '
-        'Año
-        '
-        Me.Año.HeaderText = "Año"
-        Me.Año.Name = "Año"
-        Me.Año.Width = 50
-        '
-        'Nombre_Alumno
-        '
-        Me.Nombre_Alumno.HeaderText = "Nombre Alumno"
-        Me.Nombre_Alumno.Name = "Nombre_Alumno"
-        Me.Nombre_Alumno.Width = 300
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 600
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.Width = 10000
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 73)
+        Me.Label3.Location = New System.Drawing.Point(12, 73)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(140, 15)
         Me.Label3.TabIndex = 46
@@ -144,7 +78,7 @@ Partial Class Form7
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(719, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1048, 25)
         Me.ToolStrip1.TabIndex = 50
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -216,48 +150,191 @@ Partial Class Form7
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(540, 435)
+        Me.Button1.Location = New System.Drawing.Point(847, 426)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(164, 38)
         Me.Button1.TabIndex = 51
         Me.Button1.Text = "Completar Solicitud"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DocumentosDeSolicitudBindingSource
+        '
+        Me.DocumentosDeSolicitudBindingSource.DataMember = "DocumentosDeSolicitud"
+        Me.DocumentosDeSolicitudBindingSource.DataSource = Me.DataSet1
+        '
+        'DocumentosDeSolicitudTableAdapter
+        '
+        Me.DocumentosDeSolicitudTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'DocumentosDeSolicitudDataGridView
+        '
+        Me.DocumentosDeSolicitudDataGridView.AllowUserToAddRows = False
+        Me.DocumentosDeSolicitudDataGridView.AllowUserToDeleteRows = False
+        Me.DocumentosDeSolicitudDataGridView.AutoGenerateColumns = False
+        Me.DocumentosDeSolicitudDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DocumentosDeSolicitudDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descargar, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.DocumentosDeSolicitudDataGridView.DataSource = Me.DocumentosDeSolicitudBindingSource
+        Me.DocumentosDeSolicitudDataGridView.Location = New System.Drawing.Point(12, 91)
+        Me.DocumentosDeSolicitudDataGridView.Name = "DocumentosDeSolicitudDataGridView"
+        Me.DocumentosDeSolicitudDataGridView.ReadOnly = True
+        Me.DocumentosDeSolicitudDataGridView.Size = New System.Drawing.Size(1016, 318)
+        Me.DocumentosDeSolicitudDataGridView.TabIndex = 53
+        '
+        'Descargar
+        '
+        Me.Descargar.DataPropertyName = "SolicitudID"
+        Me.Descargar.HeaderText = "Descargar"
+        Me.Descargar.Name = "Descargar"
+        Me.Descargar.ReadOnly = True
+        Me.Descargar.Text = "Descargar"
+        Me.Descargar.UseColumnTextForButtonValue = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "SolicitudID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "SolicitudID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 300
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Autor"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Autor"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 200
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Carrera"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Carrera"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 200
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Año"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Año"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 70
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Tipo de Documento"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Tipo de Documento"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Nombre_Solicitante"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre_Solicitante"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Numero_Cuenta_Solicitante"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Numero_Cuenta_Solicitante"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(879, 28)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 54
+        Me.TextBox2.Visible = False
+        '
+        'Nombre_SolicitanteLabel
+        '
+        Nombre_SolicitanteLabel.AutoSize = True
+        Nombre_SolicitanteLabel.Location = New System.Drawing.Point(12, 45)
+        Nombre_SolicitanteLabel.Name = "Nombre_SolicitanteLabel"
+        Nombre_SolicitanteLabel.Size = New System.Drawing.Size(99, 13)
+        Nombre_SolicitanteLabel.TabIndex = 54
+        Nombre_SolicitanteLabel.Text = "Nombre Solicitante:"
+        '
+        'Nombre_SolicitanteTextBox
+        '
+        Me.Nombre_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Nombre_Solicitante", True))
+        Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(117, 42)
+        Me.Nombre_SolicitanteTextBox.Name = "Nombre_SolicitanteTextBox"
+        Me.Nombre_SolicitanteTextBox.Size = New System.Drawing.Size(219, 20)
+        Me.Nombre_SolicitanteTextBox.TabIndex = 55
+        '
+        'Numero_Cuenta_SolicitanteLabel
+        '
+        Numero_Cuenta_SolicitanteLabel.AutoSize = True
+        Numero_Cuenta_SolicitanteLabel.Location = New System.Drawing.Point(358, 45)
+        Numero_Cuenta_SolicitanteLabel.Name = "Numero_Cuenta_SolicitanteLabel"
+        Numero_Cuenta_SolicitanteLabel.Size = New System.Drawing.Size(136, 13)
+        Numero_Cuenta_SolicitanteLabel.TabIndex = 55
+        Numero_Cuenta_SolicitanteLabel.Text = "Numero Cuenta Solicitante:"
+        '
+        'Numero_Cuenta_SolicitanteTextBox
+        '
+        Me.Numero_Cuenta_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Numero_Cuenta_Solicitante", True))
+        Me.Numero_Cuenta_SolicitanteTextBox.Location = New System.Drawing.Point(500, 42)
+        Me.Numero_Cuenta_SolicitanteTextBox.Name = "Numero_Cuenta_SolicitanteTextBox"
+        Me.Numero_Cuenta_SolicitanteTextBox.Size = New System.Drawing.Size(175, 20)
+        Me.Numero_Cuenta_SolicitanteTextBox.TabIndex = 56
+        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(719, 485)
+        Me.ClientSize = New System.Drawing.Size(1048, 493)
+        Me.Controls.Add(Numero_Cuenta_SolicitanteLabel)
+        Me.Controls.Add(Me.Numero_Cuenta_SolicitanteTextBox)
+        Me.Controls.Add(Nombre_SolicitanteLabel)
+        Me.Controls.Add(Me.Nombre_SolicitanteTextBox)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.DocumentosDeSolicitudDataGridView)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form7"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Completar Solicitud"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocumentosDeSolicitudDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Selected As DataGridViewButtonColumn
-    Friend WithEvents Carrera As DataGridViewTextBoxColumn
-    Friend WithEvents Año As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre_Alumno As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton5 As ToolStripButton
@@ -270,4 +347,21 @@ Partial Class Form7
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents Button1 As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents DocumentosDeSolicitudBindingSource As BindingSource
+    Friend WithEvents DocumentosDeSolicitudTableAdapter As DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter
+    Friend WithEvents TableAdapterManager As DataSet1TableAdapters.TableAdapterManager
+    Friend WithEvents DocumentosDeSolicitudDataGridView As DataGridView
+    Friend WithEvents Descargar As DataGridViewButtonColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Nombre_SolicitanteTextBox As TextBox
+    Friend WithEvents Numero_Cuenta_SolicitanteTextBox As TextBox
 End Class
