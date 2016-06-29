@@ -5,17 +5,17 @@
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet11.Tipo_de_Documento' table. You can move, or remove it, as needed.
-        Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet11.Tipo_de_Documento)
+        'Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet11.Tipo_de_Documento)
         'TODO: This line of code loads data into the 'DataSet11.Alumnos' table. You can move, or remove it, as needed.
-        Me.AlumnosTableAdapter.Fill(Me.DataSet11.Alumnos)
+        'Me.AlumnosTableAdapter.Fill(Me.DataSet11.Alumnos)
         'TODO: This line of code loads data into the 'DataSet1.Tipo_de_Documento' table. You can move, or remove it, as needed.
         Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet1.Tipo_de_Documento)
         'TODO: This line of code loads data into the 'DataSet1.Alumnos' table. You can move, or remove it, as needed.
         Me.AlumnosTableAdapter.Fill(Me.DataSet1.Alumnos)
         'TODO: This line of code loads data into the 'DataSet1.Documentos' table. You can move, or remove it, as needed.
-        Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
-        ComboBox1.Text = "Seleccione"
-        ComboBox2.Text = "Seleccione"
+        'Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
         DocumentoIDTextBox.Enabled = False
         NombreTextBox.Enabled = False
         AñoMaskedTextBox.Enabled = False
@@ -64,7 +64,7 @@
             nombre = Strings.Right(source, tmp)
             Archivo_AdjuntoTextBox.Text = "C:\Documentos\" & nombre
             NombreTextBox.Text = nombre
-            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+            ' My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
         End If
     End Sub
 
@@ -83,6 +83,11 @@
         Me.Validate()
         Me.DocumentosBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+        Try
+            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
@@ -94,8 +99,15 @@
         TextBox5.Clear()
         Archivo_AdjuntoTextBox.Clear()
         AñoMaskedTextBox.Clear()
-        ComboBox1.Text = "Seleccione"
-        ComboBox2.Text = "Seleccione"
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
         DocumentosBindingSource.RemoveCurrent()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Me.Validate()
+        Me.DocumentosBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+        My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
     End Sub
 End Class

@@ -48,7 +48,7 @@ Public Class login
         If ProgressBar1.Value = 100 Then
             Timer1.Enabled = False
             Me.Hide()
-            MsgBox("Bienvenido " & txtUsuario.Text)
+            MsgBox("Bienvenido " & txtUsuario.Text, MsgBoxStyle.OkOnly, "SISTEMA")
 
             Form4.Show()
             Form1.Hide()

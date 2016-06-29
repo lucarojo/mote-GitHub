@@ -46,4 +46,9 @@
 
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Validate()
+        Me.UsuariosBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+    End Sub
 End Class

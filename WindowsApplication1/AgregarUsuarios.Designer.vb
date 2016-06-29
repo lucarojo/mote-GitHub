@@ -53,6 +53,7 @@ Partial Class AgregarUsuarios
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         UsuarioIDLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         ContraseñaLabel = New System.Windows.Forms.Label()
@@ -66,7 +67,7 @@ Partial Class AgregarUsuarios
         'UsuarioIDLabel
         '
         UsuarioIDLabel.AutoSize = True
-        UsuarioIDLabel.Location = New System.Drawing.Point(12, 44)
+        UsuarioIDLabel.Location = New System.Drawing.Point(12, 25)
         UsuarioIDLabel.Name = "UsuarioIDLabel"
         UsuarioIDLabel.Size = New System.Drawing.Size(60, 13)
         UsuarioIDLabel.TabIndex = 1
@@ -75,7 +76,7 @@ Partial Class AgregarUsuarios
         'NombreLabel
         '
         NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 70)
+        NombreLabel.Location = New System.Drawing.Point(12, 51)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(47, 13)
         NombreLabel.TabIndex = 3
@@ -84,7 +85,7 @@ Partial Class AgregarUsuarios
         'ContraseñaLabel
         '
         ContraseñaLabel.AutoSize = True
-        ContraseñaLabel.Location = New System.Drawing.Point(12, 96)
+        ContraseñaLabel.Location = New System.Drawing.Point(12, 77)
         ContraseñaLabel.Name = "ContraseñaLabel"
         ContraseñaLabel.Size = New System.Drawing.Size(64, 13)
         ContraseñaLabel.TabIndex = 5
@@ -106,9 +107,12 @@ Partial Class AgregarUsuarios
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Me.UsuariosTableAdapter
         '
@@ -118,8 +122,9 @@ Partial Class AgregarUsuarios
         Me.UsuariosBindingNavigator.BindingSource = Me.UsuariosBindingSource
         Me.UsuariosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.UsuariosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.UsuariosBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UsuariosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.UsuariosBindingNavigatorSaveItem, Me.BindingNavigatorDeleteItem, Me.BindingNavigatorAddNewItem})
-        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 0)
+        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 320)
         Me.UsuariosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.UsuariosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.UsuariosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
@@ -129,6 +134,7 @@ Partial Class AgregarUsuarios
         Me.UsuariosBindingNavigator.Size = New System.Drawing.Size(575, 25)
         Me.UsuariosBindingNavigator.TabIndex = 0
         Me.UsuariosBindingNavigator.Text = "BindingNavigator1"
+        Me.UsuariosBindingNavigator.Visible = False
         '
         'BindingNavigatorCountItem
         '
@@ -228,7 +234,7 @@ Partial Class AgregarUsuarios
         'UsuarioIDTextBox
         '
         Me.UsuarioIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "UsuarioID", True))
-        Me.UsuarioIDTextBox.Location = New System.Drawing.Point(82, 41)
+        Me.UsuarioIDTextBox.Location = New System.Drawing.Point(82, 22)
         Me.UsuarioIDTextBox.Name = "UsuarioIDTextBox"
         Me.UsuarioIDTextBox.ReadOnly = True
         Me.UsuarioIDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -237,7 +243,7 @@ Partial Class AgregarUsuarios
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(82, 67)
+        Me.NombreTextBox.Location = New System.Drawing.Point(82, 48)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NombreTextBox.TabIndex = 4
@@ -245,7 +251,7 @@ Partial Class AgregarUsuarios
         'ContraseñaTextBox
         '
         Me.ContraseñaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Contraseña", True))
-        Me.ContraseñaTextBox.Location = New System.Drawing.Point(82, 93)
+        Me.ContraseñaTextBox.Location = New System.Drawing.Point(82, 74)
         Me.ContraseñaTextBox.Name = "ContraseñaTextBox"
         Me.ContraseñaTextBox.Size = New System.Drawing.Size(100, 20)
         Me.ContraseñaTextBox.TabIndex = 6
@@ -256,7 +262,7 @@ Partial Class AgregarUsuarios
         Me.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.UsuariosDataGridView.DataSource = Me.UsuariosBindingSource
-        Me.UsuariosDataGridView.Location = New System.Drawing.Point(202, 41)
+        Me.UsuariosDataGridView.Location = New System.Drawing.Point(202, 22)
         Me.UsuariosDataGridView.Name = "UsuariosDataGridView"
         Me.UsuariosDataGridView.Size = New System.Drawing.Size(344, 220)
         Me.UsuariosDataGridView.TabIndex = 7
@@ -282,27 +288,37 @@ Partial Class AgregarUsuarios
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(241, 294)
+        Me.Button1.Location = New System.Drawing.Point(15, 132)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(136, 39)
+        Me.Button1.Size = New System.Drawing.Size(170, 83)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Crear Nuevo"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(383, 294)
+        Me.Button2.Location = New System.Drawing.Point(410, 275)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 39)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Cancelar"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(268, 275)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(136, 39)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Salvar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'AgregarUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 345)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.UsuariosDataGridView)
@@ -352,4 +368,5 @@ Partial Class AgregarUsuarios
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

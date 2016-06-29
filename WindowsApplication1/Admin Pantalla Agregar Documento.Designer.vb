@@ -27,9 +27,9 @@ Partial Class Form5
         Dim NombreLabel As System.Windows.Forms.Label
         Dim Archivo_AdjuntoLabel As System.Windows.Forms.Label
         Dim AñoLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Dim TipoDocIDLabel As System.Windows.Forms.Label
         Dim AlumnoIDLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -73,6 +73,7 @@ Partial Class Form5
         Me.DataSet11 = New WindowsApplication1.DataSet1()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         DocumentoIDLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Archivo_AdjuntoLabel = New System.Windows.Forms.Label()
@@ -92,7 +93,7 @@ Partial Class Form5
         'DocumentoIDLabel
         '
         DocumentoIDLabel.AutoSize = True
-        DocumentoIDLabel.Location = New System.Drawing.Point(12, 63)
+        DocumentoIDLabel.Location = New System.Drawing.Point(12, 36)
         DocumentoIDLabel.Name = "DocumentoIDLabel"
         DocumentoIDLabel.Size = New System.Drawing.Size(79, 13)
         DocumentoIDLabel.TabIndex = 51
@@ -101,7 +102,7 @@ Partial Class Form5
         'NombreLabel
         '
         NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 144)
+        NombreLabel.Location = New System.Drawing.Point(12, 117)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(122, 13)
         NombreLabel.TabIndex = 53
@@ -110,7 +111,7 @@ Partial Class Form5
         'Archivo_AdjuntoLabel
         '
         Archivo_AdjuntoLabel.AutoSize = True
-        Archivo_AdjuntoLabel.Location = New System.Drawing.Point(12, 118)
+        Archivo_AdjuntoLabel.Location = New System.Drawing.Point(12, 91)
         Archivo_AdjuntoLabel.Name = "Archivo_AdjuntoLabel"
         Archivo_AdjuntoLabel.Size = New System.Drawing.Size(85, 13)
         Archivo_AdjuntoLabel.TabIndex = 57
@@ -125,27 +126,45 @@ Partial Class Form5
         AñoLabel.TabIndex = 62
         AñoLabel.Text = "Año:"
         '
+        'TipoDocIDLabel
+        '
+        TipoDocIDLabel.AutoSize = True
+        TipoDocIDLabel.Location = New System.Drawing.Point(12, 209)
+        TipoDocIDLabel.Name = "TipoDocIDLabel"
+        TipoDocIDLabel.Size = New System.Drawing.Size(89, 13)
+        TipoDocIDLabel.TabIndex = 61
+        TipoDocIDLabel.Text = "Tipo Documento:"
+        '
+        'AlumnoIDLabel
+        '
+        AlumnoIDLabel.AutoSize = True
+        AlumnoIDLabel.Location = New System.Drawing.Point(12, 183)
+        AlumnoIDLabel.Name = "AlumnoIDLabel"
+        AlumnoIDLabel.Size = New System.Drawing.Size(79, 13)
+        AlumnoIDLabel.TabIndex = 59
+        AlumnoIDLabel.Text = "Alumno (Autor):"
+        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(474, 181)
+        Me.Button3.Location = New System.Drawing.Point(574, 197)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(113, 45)
+        Me.Button3.Size = New System.Drawing.Size(113, 39)
         Me.Button3.TabIndex = 34
         Me.Button3.Text = "Cancelar"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(474, 63)
+        Me.Button2.Location = New System.Drawing.Point(464, 53)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 107)
+        Me.Button2.Size = New System.Drawing.Size(214, 77)
         Me.Button2.TabIndex = 33
         Me.Button2.Text = "Crear Nuevo"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(272, 87)
+        Me.Button1.Location = New System.Drawing.Point(272, 60)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(119, 23)
         Me.Button1.TabIndex = 30
@@ -155,7 +174,7 @@ Partial Class Form5
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 92)
+        Me.Label5.Location = New System.Drawing.Point(12, 65)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 13)
         Me.Label5.TabIndex = 25
@@ -163,7 +182,7 @@ Partial Class Form5
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(108, 89)
+        Me.TextBox5.Location = New System.Drawing.Point(108, 62)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(158, 20)
@@ -174,7 +193,7 @@ Partial Class Form5
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(690, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(699, 25)
         Me.ToolStrip1.TabIndex = 50
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -250,17 +269,19 @@ Partial Class Form5
         Me.DocumentosBindingNavigator.BindingSource = Me.DocumentosBindingSource
         Me.DocumentosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.DocumentosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.DocumentosBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DocumentosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.DocumentosBindingNavigatorSaveItem, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem})
-        Me.DocumentosBindingNavigator.Location = New System.Drawing.Point(0, 25)
+        Me.DocumentosBindingNavigator.Location = New System.Drawing.Point(0, 249)
         Me.DocumentosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.DocumentosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.DocumentosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.DocumentosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.DocumentosBindingNavigator.Name = "DocumentosBindingNavigator"
         Me.DocumentosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.DocumentosBindingNavigator.Size = New System.Drawing.Size(690, 25)
+        Me.DocumentosBindingNavigator.Size = New System.Drawing.Size(699, 25)
         Me.DocumentosBindingNavigator.TabIndex = 51
         Me.DocumentosBindingNavigator.Text = "BindingNavigator1"
+        Me.DocumentosBindingNavigator.Visible = False
         '
         'BindingNavigatorAddNewItem
         '
@@ -297,6 +318,7 @@ Partial Class Form5
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorDeleteItem.Visible = False
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -368,7 +390,7 @@ Partial Class Form5
         'DocumentoIDTextBox
         '
         Me.DocumentoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "DocumentoID", True))
-        Me.DocumentoIDTextBox.Location = New System.Drawing.Point(108, 60)
+        Me.DocumentoIDTextBox.Location = New System.Drawing.Point(108, 33)
         Me.DocumentoIDTextBox.Name = "DocumentoIDTextBox"
         Me.DocumentoIDTextBox.ReadOnly = True
         Me.DocumentoIDTextBox.Size = New System.Drawing.Size(69, 20)
@@ -377,7 +399,7 @@ Partial Class Form5
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(140, 141)
+        Me.NombreTextBox.Location = New System.Drawing.Point(140, 114)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(272, 20)
         Me.NombreTextBox.TabIndex = 54
@@ -385,7 +407,7 @@ Partial Class Form5
         'Archivo_AdjuntoTextBox
         '
         Me.Archivo_AdjuntoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "Archivo_Adjunto", True))
-        Me.Archivo_AdjuntoTextBox.Location = New System.Drawing.Point(108, 115)
+        Me.Archivo_AdjuntoTextBox.Location = New System.Drawing.Point(108, 88)
         Me.Archivo_AdjuntoTextBox.Name = "Archivo_AdjuntoTextBox"
         Me.Archivo_AdjuntoTextBox.ReadOnly = True
         Me.Archivo_AdjuntoTextBox.Size = New System.Drawing.Size(200, 20)
@@ -394,7 +416,7 @@ Partial Class Form5
         'AñoMaskedTextBox
         '
         Me.AñoMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "Año", True))
-        Me.AñoMaskedTextBox.Location = New System.Drawing.Point(108, 178)
+        Me.AñoMaskedTextBox.Location = New System.Drawing.Point(108, 151)
         Me.AñoMaskedTextBox.Mask = "00/00/0000"
         Me.AñoMaskedTextBox.Name = "AñoMaskedTextBox"
         Me.AñoMaskedTextBox.Size = New System.Drawing.Size(79, 20)
@@ -439,30 +461,13 @@ Partial Class Form5
         Me.DataSet11.DataSetName = "DataSet1"
         Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TipoDocIDLabel
-        '
-        TipoDocIDLabel.AutoSize = True
-        TipoDocIDLabel.Location = New System.Drawing.Point(12, 236)
-        TipoDocIDLabel.Name = "TipoDocIDLabel"
-        TipoDocIDLabel.Size = New System.Drawing.Size(89, 13)
-        TipoDocIDLabel.TabIndex = 61
-        TipoDocIDLabel.Text = "Tipo Documento:"
-        '
-        'AlumnoIDLabel
-        '
-        AlumnoIDLabel.AutoSize = True
-        AlumnoIDLabel.Location = New System.Drawing.Point(12, 210)
-        AlumnoIDLabel.Name = "AlumnoIDLabel"
-        AlumnoIDLabel.Size = New System.Drawing.Size(79, 13)
-        AlumnoIDLabel.TabIndex = 59
-        AlumnoIDLabel.Text = "Alumno (Autor):"
-        '
         'ComboBox1
         '
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.DocumentosBindingSource, "AlumnoID", True))
         Me.ComboBox1.DataSource = Me.AlumnosBindingSource
         Me.ComboBox1.DisplayMember = "Nombre"
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(108, 207)
+        Me.ComboBox1.Location = New System.Drawing.Point(108, 180)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(200, 21)
         Me.ComboBox1.TabIndex = 64
@@ -470,20 +475,31 @@ Partial Class Form5
         '
         'ComboBox2
         '
+        Me.ComboBox2.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.DocumentosBindingSource, "TipoDocID", True))
         Me.ComboBox2.DataSource = Me.TipoDeDocumentoBindingSource
         Me.ComboBox2.DisplayMember = "TipoDocumento"
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(108, 234)
+        Me.ComboBox2.Location = New System.Drawing.Point(108, 207)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(200, 21)
         Me.ComboBox2.TabIndex = 65
         Me.ComboBox2.ValueMember = "TipoDocID"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(455, 197)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(113, 39)
+        Me.Button4.TabIndex = 66
+        Me.Button4.Text = "Salvar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(690, 302)
+        Me.ClientSize = New System.Drawing.Size(699, 261)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(AñoLabel)
@@ -561,6 +577,7 @@ Partial Class Form5
     Friend WithEvents TipoDeDocumentoBindingSource As BindingSource
     Friend WithEvents Tipo_de_DocumentoTableAdapter As DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter
     Friend WithEvents DataSet11 As DataSet1
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
