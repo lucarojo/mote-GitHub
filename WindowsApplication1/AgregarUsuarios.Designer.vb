@@ -67,7 +67,7 @@ Partial Class AgregarUsuarios
         'UsuarioIDLabel
         '
         UsuarioIDLabel.AutoSize = True
-        UsuarioIDLabel.Location = New System.Drawing.Point(12, 25)
+        UsuarioIDLabel.Location = New System.Drawing.Point(14, 41)
         UsuarioIDLabel.Name = "UsuarioIDLabel"
         UsuarioIDLabel.Size = New System.Drawing.Size(60, 13)
         UsuarioIDLabel.TabIndex = 1
@@ -76,7 +76,7 @@ Partial Class AgregarUsuarios
         'NombreLabel
         '
         NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 51)
+        NombreLabel.Location = New System.Drawing.Point(14, 67)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(47, 13)
         NombreLabel.TabIndex = 3
@@ -85,7 +85,7 @@ Partial Class AgregarUsuarios
         'ContraseñaLabel
         '
         ContraseñaLabel.AutoSize = True
-        ContraseñaLabel.Location = New System.Drawing.Point(12, 77)
+        ContraseñaLabel.Location = New System.Drawing.Point(14, 93)
         ContraseñaLabel.Name = "ContraseñaLabel"
         ContraseñaLabel.Size = New System.Drawing.Size(64, 13)
         ContraseñaLabel.TabIndex = 5
@@ -109,6 +109,8 @@ Partial Class AgregarUsuarios
         '
         Me.TableAdapterManager.AlumnosTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
@@ -122,19 +124,17 @@ Partial Class AgregarUsuarios
         Me.UsuariosBindingNavigator.BindingSource = Me.UsuariosBindingSource
         Me.UsuariosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.UsuariosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.UsuariosBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.UsuariosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.UsuariosBindingNavigatorSaveItem, Me.BindingNavigatorDeleteItem, Me.BindingNavigatorAddNewItem})
-        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 320)
+        Me.UsuariosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorDeleteItem, Me.UsuariosBindingNavigatorSaveItem, Me.BindingNavigatorAddNewItem})
+        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.UsuariosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.UsuariosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.UsuariosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.UsuariosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.UsuariosBindingNavigator.Name = "UsuariosBindingNavigator"
         Me.UsuariosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsuariosBindingNavigator.Size = New System.Drawing.Size(575, 25)
+        Me.UsuariosBindingNavigator.Size = New System.Drawing.Size(610, 25)
         Me.UsuariosBindingNavigator.TabIndex = 0
         Me.UsuariosBindingNavigator.Text = "BindingNavigator1"
-        Me.UsuariosBindingNavigator.Visible = False
         '
         'BindingNavigatorCountItem
         '
@@ -145,13 +145,11 @@ Partial Class AgregarUsuarios
         '
         'BindingNavigatorDeleteItem
         '
-        Me.BindingNavigatorDeleteItem.Enabled = False
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(70, 22)
         Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        Me.BindingNavigatorDeleteItem.Visible = False
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -219,6 +217,7 @@ Partial Class AgregarUsuarios
         Me.UsuariosBindingNavigatorSaveItem.Name = "UsuariosBindingNavigatorSaveItem"
         Me.UsuariosBindingNavigatorSaveItem.Size = New System.Drawing.Size(58, 22)
         Me.UsuariosBindingNavigatorSaveItem.Text = "Salvar"
+        Me.UsuariosBindingNavigatorSaveItem.Visible = False
         '
         'BindingNavigatorAddNewItem
         '
@@ -234,7 +233,7 @@ Partial Class AgregarUsuarios
         'UsuarioIDTextBox
         '
         Me.UsuarioIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "UsuarioID", True))
-        Me.UsuarioIDTextBox.Location = New System.Drawing.Point(82, 22)
+        Me.UsuarioIDTextBox.Location = New System.Drawing.Point(84, 38)
         Me.UsuarioIDTextBox.Name = "UsuarioIDTextBox"
         Me.UsuarioIDTextBox.ReadOnly = True
         Me.UsuarioIDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -243,17 +242,17 @@ Partial Class AgregarUsuarios
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(82, 48)
+        Me.NombreTextBox.Location = New System.Drawing.Point(84, 64)
         Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NombreTextBox.Size = New System.Drawing.Size(153, 20)
         Me.NombreTextBox.TabIndex = 4
         '
         'ContraseñaTextBox
         '
         Me.ContraseñaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Contraseña", True))
-        Me.ContraseñaTextBox.Location = New System.Drawing.Point(82, 74)
+        Me.ContraseñaTextBox.Location = New System.Drawing.Point(84, 90)
         Me.ContraseñaTextBox.Name = "ContraseñaTextBox"
-        Me.ContraseñaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ContraseñaTextBox.Size = New System.Drawing.Size(153, 20)
         Me.ContraseñaTextBox.TabIndex = 6
         '
         'UsuariosDataGridView
@@ -262,7 +261,7 @@ Partial Class AgregarUsuarios
         Me.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.UsuariosDataGridView.DataSource = Me.UsuariosBindingSource
-        Me.UsuariosDataGridView.Location = New System.Drawing.Point(202, 22)
+        Me.UsuariosDataGridView.Location = New System.Drawing.Point(243, 38)
         Me.UsuariosDataGridView.Name = "UsuariosDataGridView"
         Me.UsuariosDataGridView.Size = New System.Drawing.Size(344, 220)
         Me.UsuariosDataGridView.TabIndex = 7
@@ -288,7 +287,7 @@ Partial Class AgregarUsuarios
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(15, 132)
+        Me.Button1.Location = New System.Drawing.Point(43, 136)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(170, 83)
         Me.Button1.TabIndex = 8
@@ -297,7 +296,7 @@ Partial Class AgregarUsuarios
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(410, 275)
+        Me.Button2.Location = New System.Drawing.Point(451, 291)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 39)
         Me.Button2.TabIndex = 9
@@ -306,7 +305,7 @@ Partial Class AgregarUsuarios
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(268, 275)
+        Me.Button3.Location = New System.Drawing.Point(309, 291)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(136, 39)
         Me.Button3.TabIndex = 10
@@ -317,7 +316,7 @@ Partial Class AgregarUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(575, 345)
+        Me.ClientSize = New System.Drawing.Size(610, 345)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

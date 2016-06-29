@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarAlumnos.Designer.vb">
+      <DependentUpon>AgregarAlumnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarAlumnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AgregarUsuarios.Designer.vb">
       <DependentUpon>AgregarUsuarios.vb</DependentUpon>
     </Compile>
@@ -123,12 +129,6 @@
     <Compile Include="Admin Pantalla Agregar Documento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Pantalla Solicitudes.Designer.vb">
-      <DependentUpon>Admin Pantalla Solicitudes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Pantalla Solicitudes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Admin Pantalla Completar Solicitud.Designer.vb">
       <DependentUpon>Admin Pantalla Completar Solicitud.vb</DependentUpon>
     </Compile>
@@ -155,6 +155,9 @@
     <EmbeddedResource Include="Admin Pantalla Buscar Docuemtno.resx">
       <DependentUpon>Admin Pantalla Buscar Docuemtno.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarAlumnos.resx">
+      <DependentUpon>AgregarAlumnos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuarios.resx">
       <DependentUpon>AgregarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
@@ -172,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Pantalla Agregar Documento.resx">
       <DependentUpon>Admin Pantalla Agregar Documento.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin Pantalla Solicitudes.resx">
-      <DependentUpon>Admin Pantalla Solicitudes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Pantalla Completar Solicitud.resx">
       <DependentUpon>Admin Pantalla Completar Solicitud.vb</DependentUpon>

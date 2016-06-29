@@ -33,10 +33,18 @@ Partial Class Form4
         Me.BuscarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.MantenimientoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoAlumnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ConsultaSolicitudesEstadoDataGridView = New System.Windows.Forms.DataGridView()
+        Me.SolicitudID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CompletarSolicitud = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsultaSolicitudesEstadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1 = New WindowsApplication1.DataSet1()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -47,13 +55,6 @@ Partial Class Form4
         Me.SolicitudesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SolicitudesTableAdapter = New WindowsApplication1.DataSet1TableAdapters.SolicitudesTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.SolicitudID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CompletarSolicitud = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.ConsultaSolicitudesEstadoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaSolicitudesEstadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +67,7 @@ Partial Class Form4
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(731, 9)
+        Me.Label3.Location = New System.Drawing.Point(677, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 25
@@ -120,7 +121,7 @@ Partial Class Form4
         '
         'ToolStripButton1
         '
-        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
+        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.MantenimientoAlumnosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
@@ -130,13 +131,19 @@ Partial Class Form4
         'MantenimientoUsuariosToolStripMenuItem
         '
         Me.MantenimientoUsuariosToolStripMenuItem.Name = "MantenimientoUsuariosToolStripMenuItem"
-        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.MantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios"
+        '
+        'MantenimientoAlumnosToolStripMenuItem
+        '
+        Me.MantenimientoAlumnosToolStripMenuItem.Name = "MantenimientoAlumnosToolStripMenuItem"
+        Me.MantenimientoAlumnosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.MantenimientoAlumnosToolStripMenuItem.Text = "Mantenimiento Alumnos"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'ToolStripButton2
@@ -169,67 +176,6 @@ Partial Class Form4
         Me.ConsultaSolicitudesEstadoDataGridView.ReadOnly = True
         Me.ConsultaSolicitudesEstadoDataGridView.Size = New System.Drawing.Size(843, 436)
         Me.ConsultaSolicitudesEstadoDataGridView.TabIndex = 54
-        '
-        'ConsultaSolicitudesEstadoBindingSource
-        '
-        Me.ConsultaSolicitudesEstadoBindingSource.DataMember = "ConsultaSolicitudesEstado"
-        Me.ConsultaSolicitudesEstadoBindingSource.DataSource = Me.DataSet1
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DataSource = Me.EstadoBindingSource
-        Me.ComboBox1.DisplayMember = "Estado"
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(134, 44)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 55
-        Me.ComboBox1.ValueMember = "EstadoID"
-        '
-        'EstadoBindingSource
-        '
-        Me.EstadoBindingSource.DataMember = "Estado"
-        Me.EstadoBindingSource.DataSource = Me.DataSet1
-        '
-        'ConsultaSolicitudesEstadoTableAdapter
-        '
-        Me.ConsultaSolicitudesEstadoTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.EstadoTableAdapter = Nothing
-        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
-        '
-        'EstadoTableAdapter
-        '
-        Me.EstadoTableAdapter.ClearBeforeFill = True
-        '
-        'SolicitudesBindingSource
-        '
-        Me.SolicitudesBindingSource.DataMember = "Solicitudes"
-        Me.SolicitudesBindingSource.DataSource = Me.DataSet1
-        '
-        'SolicitudesTableAdapter
-        '
-        Me.SolicitudesTableAdapter.ClearBeforeFill = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 47)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 13)
-        Me.Label1.TabIndex = 56
-        Me.Label1.Text = "Estado de la Solicitud:"
         '
         'SolicitudID
         '
@@ -283,6 +229,72 @@ Partial Class Form4
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
         Me.DataGridViewTextBoxColumn5.Width = 200
+        '
+        'ConsultaSolicitudesEstadoBindingSource
+        '
+        Me.ConsultaSolicitudesEstadoBindingSource.DataMember = "ConsultaSolicitudesEstado"
+        Me.ConsultaSolicitudesEstadoBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataSource = Me.EstadoBindingSource
+        Me.ComboBox1.DisplayMember = "Estado"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(134, 44)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 55
+        Me.ComboBox1.ValueMember = "EstadoID"
+        '
+        'EstadoBindingSource
+        '
+        Me.EstadoBindingSource.DataMember = "Estado"
+        Me.EstadoBindingSource.DataSource = Me.DataSet1
+        '
+        'ConsultaSolicitudesEstadoTableAdapter
+        '
+        Me.ConsultaSolicitudesEstadoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'EstadoTableAdapter
+        '
+        Me.EstadoTableAdapter.ClearBeforeFill = True
+        '
+        'SolicitudesBindingSource
+        '
+        Me.SolicitudesBindingSource.DataMember = "Solicitudes"
+        Me.SolicitudesBindingSource.DataSource = Me.DataSet1
+        '
+        'SolicitudesTableAdapter
+        '
+        Me.SolicitudesTableAdapter.ClearBeforeFill = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 47)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(112, 13)
+        Me.Label1.TabIndex = 56
+        Me.Label1.Text = "Estado de la Solicitud:"
         '
         'Form4
         '
@@ -338,4 +350,5 @@ Partial Class Form4
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents MantenimientoAlumnosToolStripMenuItem As ToolStripMenuItem
 End Class

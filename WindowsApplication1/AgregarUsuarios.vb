@@ -35,14 +35,24 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim rnum As Random
+        Dim num As Integer
+        rnum = New Random
+        num = rnum.Next(1, 999999999)
         UsuariosBindingSource.AddNew()
+        UsuarioIDTextBox.Text = num.ToString
 
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         NombreTextBox.Clear()
         ContraseñaTextBox.Clear()
-        UsuariosBindingSource.RemoveCurrent()
+        Try
+            UsuariosBindingSource.RemoveCurrent()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

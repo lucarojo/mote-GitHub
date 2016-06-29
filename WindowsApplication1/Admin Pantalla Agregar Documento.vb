@@ -16,11 +16,19 @@
         'Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
         ComboBox1.Text = ""
         ComboBox2.Text = ""
-        DocumentoIDTextBox.Enabled = False
-        NombreTextBox.Enabled = False
-        AñoMaskedTextBox.Enabled = False
-        ComboBox1.Enabled = False
-        ComboBox2.Enabled = False
+        Dim rnum As Random
+        Dim num As Integer
+        rnum = New Random
+        num = rnum.Next(1, 999999999)
+
+        'DocumentoIDTextBox.Enabled = False
+        'NombreTextBox.Enabled = False
+        'AñoTextBox.Enabled = False
+        'ComboBox1.Enabled = False
+        'ComboBox2.Enabled = False
+        DocumentosBindingSource.AddNew()
+        DocumentoIDTextBox.Text = num.ToString
+        'AñoTextBox.Text = Today.Date.Year
     End Sub
 
     Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
@@ -72,10 +80,15 @@
         'My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
         DocumentoIDTextBox.Enabled = True
         NombreTextBox.Enabled = True
-        AñoMaskedTextBox.Enabled = True
+        'AñoTextBox.Enabled = True
         ComboBox1.Enabled = True
         ComboBox2.Enabled = True
+        Dim rnum As Random
+        Dim num As Integer
+        rnum = New Random
+        num = rnum.Next(1, 999999999)
         DocumentosBindingSource.AddNew()
+        DocumentoIDTextBox.Text = num.ToString
 
     End Sub
 
@@ -98,16 +111,37 @@
         NombreTextBox.Clear()
         TextBox5.Clear()
         Archivo_AdjuntoTextBox.Clear()
-        AñoMaskedTextBox.Clear()
+        'AñoTextBox.Clear()
         ComboBox1.Text = ""
         ComboBox2.Text = ""
-        DocumentosBindingSource.RemoveCurrent()
+        Try
+            DocumentosBindingSource.RemoveCurrent()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Validate()
-        Me.DocumentosBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
-        My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+        Try
+            Me.Validate()
+            Me.DocumentosBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+            TextBox5.Clear()
+            Dim rnum As Random
+            Dim num As Integer
+            rnum = New Random
+            num = rnum.Next(1, 999999999)
+            DocumentosBindingSource.AddNew()
+            DocumentoIDTextBox.Text = num.ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub MantenimientoAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoAlumnosToolStripMenuItem.Click
+        AgregarAlumnos.Show()
     End Sub
 End Class

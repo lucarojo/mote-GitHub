@@ -26,9 +26,9 @@ Partial Class Form5
         Dim DocumentoIDLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim Archivo_AdjuntoLabel As System.Windows.Forms.Label
-        Dim AñoLabel As System.Windows.Forms.Label
         Dim TipoDocIDLabel As System.Windows.Forms.Label
         Dim AlumnoIDLabel As System.Windows.Forms.Label
+        Dim AñoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -63,7 +63,6 @@ Partial Class Form5
         Me.DocumentoIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.Archivo_AdjuntoTextBox = New System.Windows.Forms.TextBox()
-        Me.AñoMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.AlumnosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DocumentosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
@@ -74,12 +73,14 @@ Partial Class Form5
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.AñoDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.MantenimientoAlumnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         DocumentoIDLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Archivo_AdjuntoLabel = New System.Windows.Forms.Label()
-        AñoLabel = New System.Windows.Forms.Label()
         TipoDocIDLabel = New System.Windows.Forms.Label()
         AlumnoIDLabel = New System.Windows.Forms.Label()
+        AñoLabel = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DocumentosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentosBindingNavigator.SuspendLayout()
@@ -117,15 +118,6 @@ Partial Class Form5
         Archivo_AdjuntoLabel.TabIndex = 57
         Archivo_AdjuntoLabel.Text = "Archivo Adjunto:"
         '
-        'AñoLabel
-        '
-        AñoLabel.AutoSize = True
-        AñoLabel.Location = New System.Drawing.Point(12, 181)
-        AñoLabel.Name = "AñoLabel"
-        AñoLabel.Size = New System.Drawing.Size(29, 13)
-        AñoLabel.TabIndex = 62
-        AñoLabel.Text = "Año:"
-        '
         'TipoDocIDLabel
         '
         TipoDocIDLabel.AutoSize = True
@@ -143,6 +135,15 @@ Partial Class Form5
         AlumnoIDLabel.Size = New System.Drawing.Size(79, 13)
         AlumnoIDLabel.TabIndex = 59
         AlumnoIDLabel.Text = "Alumno (Autor):"
+        '
+        'AñoLabel
+        '
+        AñoLabel.AutoSize = True
+        AñoLabel.Location = New System.Drawing.Point(12, 160)
+        AñoLabel.Name = "AñoLabel"
+        AñoLabel.Size = New System.Drawing.Size(29, 13)
+        AñoLabel.TabIndex = 66
+        AñoLabel.Text = "Año:"
         '
         'Button3
         '
@@ -193,7 +194,7 @@ Partial Class Form5
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(699, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(707, 25)
         Me.ToolStrip1.TabIndex = 50
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -236,7 +237,7 @@ Partial Class Form5
         '
         'ToolStripButton1
         '
-        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
+        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.MantenimientoAlumnosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
@@ -246,13 +247,13 @@ Partial Class Form5
         'MantenimientoUsuariosToolStripMenuItem
         '
         Me.MantenimientoUsuariosToolStripMenuItem.Name = "MantenimientoUsuariosToolStripMenuItem"
-        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.MantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'ToolStripButton2
@@ -301,7 +302,7 @@ Partial Class Form5
         'DataSet1
         '
         Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        'Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -399,9 +400,9 @@ Partial Class Form5
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(140, 114)
+        Me.NombreTextBox.Location = New System.Drawing.Point(140, 117)
         Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(272, 20)
+        Me.NombreTextBox.Size = New System.Drawing.Size(251, 20)
         Me.NombreTextBox.TabIndex = 54
         '
         'Archivo_AdjuntoTextBox
@@ -412,16 +413,6 @@ Partial Class Form5
         Me.Archivo_AdjuntoTextBox.ReadOnly = True
         Me.Archivo_AdjuntoTextBox.Size = New System.Drawing.Size(200, 20)
         Me.Archivo_AdjuntoTextBox.TabIndex = 58
-        '
-        'AñoMaskedTextBox
-        '
-        Me.AñoMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosBindingSource, "Año", True))
-        Me.AñoMaskedTextBox.Location = New System.Drawing.Point(108, 151)
-        Me.AñoMaskedTextBox.Mask = "00/00/0000"
-        Me.AñoMaskedTextBox.Name = "AñoMaskedTextBox"
-        Me.AñoMaskedTextBox.Size = New System.Drawing.Size(79, 20)
-        Me.AñoMaskedTextBox.TabIndex = 63
-        Me.AñoMaskedTextBox.ValidatingType = GetType(Date)
         '
         'AlumnosBindingSource
         '
@@ -494,16 +485,30 @@ Partial Class Form5
         Me.Button4.Text = "Salvar"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'AñoDateTimePicker
+        '
+        Me.AñoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.DocumentosBindingSource, "Año", True))
+        Me.AñoDateTimePicker.Location = New System.Drawing.Point(108, 154)
+        Me.AñoDateTimePicker.Name = "AñoDateTimePicker"
+        Me.AñoDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.AñoDateTimePicker.TabIndex = 67
+        '
+        'MantenimientoAlumnosToolStripMenuItem
+        '
+        Me.MantenimientoAlumnosToolStripMenuItem.Name = "MantenimientoAlumnosToolStripMenuItem"
+        Me.MantenimientoAlumnosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.MantenimientoAlumnosToolStripMenuItem.Text = "Mantenimiento Alumnos"
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 261)
+        Me.ClientSize = New System.Drawing.Size(707, 261)
+        Me.Controls.Add(AñoLabel)
+        Me.Controls.Add(Me.AñoDateTimePicker)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(AñoLabel)
-        Me.Controls.Add(Me.AñoMaskedTextBox)
         Me.Controls.Add(DocumentoIDLabel)
         Me.Controls.Add(Me.DocumentoIDTextBox)
         Me.Controls.Add(NombreLabel)
@@ -571,7 +576,6 @@ Partial Class Form5
     Friend WithEvents DocumentoIDTextBox As TextBox
     Friend WithEvents NombreTextBox As TextBox
     Friend WithEvents Archivo_AdjuntoTextBox As TextBox
-    Friend WithEvents AñoMaskedTextBox As MaskedTextBox
     Friend WithEvents AlumnosBindingSource As BindingSource
     Friend WithEvents AlumnosTableAdapter As DataSet1TableAdapters.AlumnosTableAdapter
     Friend WithEvents TipoDeDocumentoBindingSource As BindingSource
@@ -580,4 +584,6 @@ Partial Class Form5
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Button4 As Button
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents AñoDateTimePicker As DateTimePicker
+    Friend WithEvents MantenimientoAlumnosToolStripMenuItem As ToolStripMenuItem
 End Class

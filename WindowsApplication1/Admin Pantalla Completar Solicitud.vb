@@ -41,11 +41,11 @@
         TextBox2.Text = Jalar
         SolicitudID.Text = Jalar
         EstadoID.Text = "COM"
-        Try
-            Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, TextBox2.Text)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+        ' Try
+        Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, TextBox2.Text)
+        'Catch ex As System.Exception
+        'System.Windows.Forms.MessageBox.Show(ex.Message)
+        'End Try
     End Sub
 
     Private Sub DocumentosDeSolicitudDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DocumentosDeSolicitudDataGridView.CellContentClick
@@ -80,4 +80,11 @@
         Me.Close()
     End Sub
 
+    Private Sub MantenimientoAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoAlumnosToolStripMenuItem.Click
+        AgregarAlumnos.Show()
+    End Sub
+
+    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
+
+    End Sub
 End Class

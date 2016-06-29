@@ -71,6 +71,8 @@
         Form7.Show()
 
     End Sub
-End Class
 
-'agregar comentario
+    Private Sub MantenimientoAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoAlumnosToolStripMenuItem.Click
+        AgregarAlumnos.Show()
+    End Sub
+End Class
