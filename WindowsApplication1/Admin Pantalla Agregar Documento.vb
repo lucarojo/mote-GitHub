@@ -1,4 +1,28 @@
 ﻿Public Class Form5
+
+    Dim source As String
+    Dim nombre As String
+
+    Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSet11.Tipo_de_Documento' table. You can move, or remove it, as needed.
+        Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet11.Tipo_de_Documento)
+        'TODO: This line of code loads data into the 'DataSet11.Alumnos' table. You can move, or remove it, as needed.
+        Me.AlumnosTableAdapter.Fill(Me.DataSet11.Alumnos)
+        'TODO: This line of code loads data into the 'DataSet1.Tipo_de_Documento' table. You can move, or remove it, as needed.
+        Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet1.Tipo_de_Documento)
+        'TODO: This line of code loads data into the 'DataSet1.Alumnos' table. You can move, or remove it, as needed.
+        Me.AlumnosTableAdapter.Fill(Me.DataSet1.Alumnos)
+        'TODO: This line of code loads data into the 'DataSet1.Documentos' table. You can move, or remove it, as needed.
+        Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
+        ComboBox1.Text = "Seleccione"
+        ComboBox2.Text = "Seleccione"
+        DocumentoIDTextBox.Enabled = False
+        NombreTextBox.Enabled = False
+        AñoMaskedTextBox.Enabled = False
+        ComboBox1.Enabled = False
+        ComboBox2.Enabled = False
+    End Sub
+
     Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
         Form4.Show()
         Me.Close()
@@ -25,5 +49,53 @@
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Form1.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim file As New OpenFileDialog()
+        If file.ShowDialog() = DialogResult.OK Then
+            TextBox5.Text = file.FileName
+            source = file.FileName
+            Dim tam As Integer = Len(source)
+            Dim pos As Integer
+            Dim compares As String = "\"
+            pos = InStrRev(source, compares)
+            Dim tmp As Integer = tam - pos
+            nombre = Strings.Right(source, tmp)
+            Archivo_AdjuntoTextBox.Text = "C:\Documentos\" & nombre
+            NombreTextBox.Text = nombre
+            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+        DocumentoIDTextBox.Enabled = True
+        NombreTextBox.Enabled = True
+        AñoMaskedTextBox.Enabled = True
+        ComboBox1.Enabled = True
+        ComboBox2.Enabled = True
+        DocumentosBindingSource.AddNew()
+
+    End Sub
+
+    Private Sub DocumentosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles DocumentosBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.DocumentosBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+
+    End Sub
+
+
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        DocumentoIDTextBox.Clear()
+        NombreTextBox.Clear()
+        TextBox5.Clear()
+        Archivo_AdjuntoTextBox.Clear()
+        AñoMaskedTextBox.Clear()
+        ComboBox1.Text = "Seleccione"
+        ComboBox2.Text = "Seleccione"
+        DocumentosBindingSource.RemoveCurrent()
     End Sub
 End Class
