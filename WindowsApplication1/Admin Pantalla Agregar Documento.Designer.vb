@@ -43,6 +43,7 @@ Partial Class Form5
         Me.BuscarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.MantenimientoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoAlumnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.DocumentosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -74,7 +75,6 @@ Partial Class Form5
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.AñoDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.MantenimientoAlumnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         DocumentoIDLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Archivo_AdjuntoLabel = New System.Windows.Forms.Label()
@@ -250,6 +250,12 @@ Partial Class Form5
         Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.MantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios"
         '
+        'MantenimientoAlumnosToolStripMenuItem
+        '
+        Me.MantenimientoAlumnosToolStripMenuItem.Name = "MantenimientoAlumnosToolStripMenuItem"
+        Me.MantenimientoAlumnosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.MantenimientoAlumnosToolStripMenuItem.Text = "Mantenimiento Alumnos"
+        '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
@@ -302,7 +308,7 @@ Partial Class Form5
         'DataSet1
         '
         Me.DataSet1.DataSetName = "DataSet1"
-        'Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -427,6 +433,8 @@ Partial Class Form5
         '
         Me.TableAdapterManager.AlumnosTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Me.DocumentosTableAdapter
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
@@ -492,12 +500,6 @@ Partial Class Form5
         Me.AñoDateTimePicker.Name = "AñoDateTimePicker"
         Me.AñoDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.AñoDateTimePicker.TabIndex = 67
-        '
-        'MantenimientoAlumnosToolStripMenuItem
-        '
-        Me.MantenimientoAlumnosToolStripMenuItem.Name = "MantenimientoAlumnosToolStripMenuItem"
-        Me.MantenimientoAlumnosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.MantenimientoAlumnosToolStripMenuItem.Text = "Mantenimiento Alumnos"
         '
         'Form5
         '
