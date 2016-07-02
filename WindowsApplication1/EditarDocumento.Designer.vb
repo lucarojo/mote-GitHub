@@ -274,6 +274,7 @@ Partial Class EditarDocumento
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "EditarDocumento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EditarDocumento"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ModificarDocumentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

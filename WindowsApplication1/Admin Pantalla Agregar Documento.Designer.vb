@@ -529,6 +529,7 @@ Partial Class Form5
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox5)
         Me.Name = "Form5"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Documento"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

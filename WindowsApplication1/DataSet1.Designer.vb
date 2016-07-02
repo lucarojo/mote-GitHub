@@ -9663,47 +9663,6 @@ Namespace DataSet1TableAdapters
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal docuid As String, ByVal nombre As String, ByVal año As Global.System.Nullable(Of Date), ByVal arch As String, ByVal tipoid As String, ByVal aluid As String) As DataSet1.modificarDocumentoDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (docuid Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(docuid,String)
-            End If
-            If (nombre Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(nombre,String)
-            End If
-            If (año.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(año.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (arch Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(arch,String)
-            End If
-            If (tipoid Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(5).Value = CType(tipoid,String)
-            End If
-            If (aluid Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(6).Value = CType(aluid,String)
-            End If
-            Dim dataTable As DataSet1.modificarDocumentoDataTable = New DataSet1.modificarDocumentoDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
     End Class
     
     '''<summary>

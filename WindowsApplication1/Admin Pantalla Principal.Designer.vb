@@ -309,6 +309,7 @@ Partial Class Form4
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "Form4"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrador"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

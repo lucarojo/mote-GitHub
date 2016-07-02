@@ -66,6 +66,7 @@
             TextBox1.Enabled = True
         Else
             TextBox1.Enabled = False
+            TextBox1.Clear()
         End If
     End Sub
 
@@ -74,6 +75,7 @@
             TextBox2.Enabled = True
         Else
             TextBox2.Enabled = False
+            TextBox2.Clear()
         End If
     End Sub
 
@@ -82,6 +84,7 @@
             TextBox3.Enabled = True
         Else
             TextBox3.Enabled = False
+            TextBox3.Clear()
         End If
     End Sub
 
@@ -90,6 +93,7 @@
             TextBox4.Enabled = True
         Else
             TextBox4.Enabled = False
+            TextBox4.Clear()
         End If
     End Sub
 
