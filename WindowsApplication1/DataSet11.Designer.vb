@@ -4412,8 +4412,6 @@ Partial Public Class DataSet1
         
         Private columnNombre As Global.System.Data.DataColumn
         
-        Private columnFecha_Creacion As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -4474,14 +4472,6 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Fecha_CreacionColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFecha_Creacion
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4518,9 +4508,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddProcedimientoReporteRow(ByVal Nombre_Solicitante As String, ByVal Numero_Cuenta_Solicitante As String, ByVal Nombre As String, ByVal Fecha_Creacion As Date) As ProcedimientoReporteRow
+        Public Overloads Function AddProcedimientoReporteRow(ByVal Nombre_Solicitante As String, ByVal Numero_Cuenta_Solicitante As String, ByVal Nombre As String) As ProcedimientoReporteRow
             Dim rowProcedimientoReporteRow As ProcedimientoReporteRow = CType(Me.NewRow,ProcedimientoReporteRow)
-            Dim columnValuesArray() As Object = New Object() {Nombre_Solicitante, Numero_Cuenta_Solicitante, Nombre, Fecha_Creacion}
+            Dim columnValuesArray() As Object = New Object() {Nombre_Solicitante, Numero_Cuenta_Solicitante, Nombre}
             rowProcedimientoReporteRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProcedimientoReporteRow)
             Return rowProcedimientoReporteRow
@@ -4546,7 +4536,6 @@ Partial Public Class DataSet1
             Me.columnNombre_Solicitante = MyBase.Columns("Nombre_Solicitante")
             Me.columnNumero_Cuenta_Solicitante = MyBase.Columns("Numero_Cuenta_Solicitante")
             Me.columnNombre = MyBase.Columns("Nombre")
-            Me.columnFecha_Creacion = MyBase.Columns("Fecha_Creacion")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4558,8 +4547,6 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnNumero_Cuenta_Solicitante)
             Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombre)
-            Me.columnFecha_Creacion = New Global.System.Data.DataColumn("Fecha_Creacion", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFecha_Creacion)
             Me.columnNombre_Solicitante.MaxLength = 200
             Me.columnNumero_Cuenta_Solicitante.MaxLength = 15
             Me.columnNombre.MaxLength = 500
@@ -6268,21 +6255,6 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Fecha_Creacion() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fecha_Creacion' in table 'ProcedimientoReporte' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsNombre_SolicitanteNull() As Boolean
             Return Me.IsNull(Me.tableProcedimientoReporte.Nombre_SolicitanteColumn)
         End Function
@@ -6315,18 +6287,6 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetNombreNull()
             Me(Me.tableProcedimientoReporte.NombreColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFecha_CreacionNull() As Boolean
-            Return Me.IsNull(Me.tableProcedimientoReporte.Fecha_CreacionColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFecha_CreacionNull()
-            Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9553,15 +9513,21 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("Nombre_Solicitante", "Nombre_Solicitante")
             tableMapping.ColumnMappings.Add("Numero_Cuenta_Solicitante", "Numero_Cuenta_Solicitante")
             tableMapping.ColumnMappings.Add("Nombre", "Nombre")
-            tableMapping.ColumnMappings.Add("Fecha_Creacion", "Fecha_Creacion")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "dbo.ProcedimientoReporte"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inicio", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Final", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.MATEConnectionString
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.MATEConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9599,6 +9565,55 @@ Namespace DataSet1TableAdapters
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal Inicio As Global.System.Nullable(Of Date), ByVal Final As Global.System.Nullable(Of Date)) As DataSet1.ProcedimientoReporteDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Inicio.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Inicio.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Final.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Final.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSet1.ProcedimientoReporteDataTable = New DataSet1.ProcedimientoReporteDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.ProcedimientoReporteDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "ProcedimientoReporte")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
     End Class
     
     '''<summary>
@@ -9629,6 +9644,8 @@ Namespace DataSet1TableAdapters
         Private _usuariosTableAdapter As UsuariosTableAdapter
         
         Private _tipo_de_DocumentoTableAdapter As Tipo_de_DocumentoTableAdapter
+        
+        Private _procedimientoReporteTableAdapter As ProcedimientoReporteTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -9758,6 +9775,20 @@ Namespace DataSet1TableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property ProcedimientoReporteTableAdapter() As ProcedimientoReporteTableAdapter
+            Get
+                Return Me._procedimientoReporteTableAdapter
+            End Get
+            Set
+                Me._procedimientoReporteTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -9808,6 +9839,10 @@ Namespace DataSet1TableAdapters
                             AndAlso (Not (Me._tipo_de_DocumentoTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tipo_de_DocumentoTableAdapter.Connection
                 End If
+                If ((Not (Me._procedimientoReporteTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._procedimientoReporteTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._procedimientoReporteTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -9843,6 +9878,9 @@ Namespace DataSet1TableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._tipo_de_DocumentoTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -9928,6 +9966,15 @@ Namespace DataSet1TableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ProcedimientoReporte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._procedimientoReporteTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -10002,6 +10049,14 @@ Namespace DataSet1TableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ProcedimientoReporte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._procedimientoReporteTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -10012,6 +10067,14 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ProcedimientoReporte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._procedimientoReporteTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._solicitudesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Solicitudes.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -10157,6 +10220,11 @@ Namespace DataSet1TableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._procedimientoReporteTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._procedimientoReporteTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -10261,6 +10329,15 @@ Namespace DataSet1TableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tipo_de_DocumentoTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._procedimientoReporteTableAdapter, Me._procedimientoReporteTableAdapter.Connection)
+                    Me._procedimientoReporteTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._procedimientoReporteTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._procedimientoReporteTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._procedimientoReporteTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._procedimientoReporteTableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -10352,6 +10429,10 @@ Namespace DataSet1TableAdapters
                 If (Not (Me._tipo_de_DocumentoTableAdapter) Is Nothing) Then
                     Me._tipo_de_DocumentoTableAdapter.Connection = CType(revertConnections(Me._tipo_de_DocumentoTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._tipo_de_DocumentoTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._procedimientoReporteTableAdapter) Is Nothing) Then
+                    Me._procedimientoReporteTableAdapter.Connection = CType(revertConnections(Me._procedimientoReporteTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._procedimientoReporteTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

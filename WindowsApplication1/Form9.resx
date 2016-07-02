@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="DataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="ProcedimientoReporteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
+  </metadata>
+  <metadata name="ProcedimientoReporteTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>371, 17</value>
+  </metadata>
+  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>618, 17</value>
+  </metadata>
+  <metadata name="ProcedimientoReporteBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>176, 56</value>
+  </metadata>
+  <data name="GridViewReporte.OptionsPrint.RtfPageHeader" xml:space="preserve">
+    <value>{\rtf1\deff0{\fonttbl{\f0 Calibri;}{\f1 Times New Roman;}{\f2 Calibri Light;}}{\colortbl ;\red46\green116\blue181 ;\red0\green0\blue255 ;}{\*\defchp \f1}{\stylesheet {\ql\f1 Normal;}{\s1\sbasedon0\snext0\ql\outlinelevel0\sl258\slmult1\sb240\f1\fs32\cf1 heading 1;}{\*\cs2\f1 Default Paragraph Font;}{\*\cs3\sbasedon2\f1 Line Number;}{\*\cs4\ul\f1\cf2 Hyperlink;}{\*\ts5\tsrowd\f1\ql\tscellpaddfl3\tscellpaddl108\tscellpaddfb3\tscellpaddfr3\tscellpaddr108\tscellpaddft3\tsvertalt\cltxlrtb Normal Table;}{\*\ts6\tsrowd\sbasedon5\f1\ql\trbrdrt\brdrs\brdrw10\trbrdrl\brdrs\brdrw10\trbrdrb\brdrs\brdrw10\trbrdrr\brdrs\brdrw10\trbrdrh\brdrs\brdrw10\trbrdrv\brdrs\brdrw10\tscellpaddfl3\tscellpaddl108\tscellpaddfr3\tscellpaddr108\tsvertalt\cltxlrtb Table Simple 1;}}{\*\listoverridetable}\nouicompat\splytwnine\htmautsp\sectd\marglsxn0\margrsxn0\pard\plain\ql\fi3420\li1440\lin1440\tx900{\lang18442\langfe18442\f1\cf0        }{\*\shppict{\pict\pngblip\picw2672\pich2408\picwgoal1515\pichgoal1365\picscalex113\picscaley119 89504e470d0a1a0a
+0000000d49484452000000650000005b08030000005dd2bb20000000017352474200aece1ce90000000467414d410000b18f0bfc61050000011a504c5445ffffffffe000fffefffefdf0f5d900fffffdfdec79f5f8fee7da8df0e388ffdf00fbfbfbefeb
+c1f8dd29f5f5f5fcfcfccecece5d5d5ddadadae3e3e36f6f6fc8c8c8555555f0f0f08d8d8d9696964d4d4ddcdcdc7575756565654141419393938181819f9f9fafafafb8b8b8a6a6a67d7d7d3a3a3a2e2e2eadadadf5fbf4c7e7bcd4e8cc9dd38f87c877
+76827348af2aa5d399e0f1da94d082279e00000000b5deaa39a91240aa2eb7d7aeebf7e777c364199b0062b84b58b63aa7e099cde9c567686efffa7e8e8750958500b09c00cabc5ee6e4dafff1006d707d5a5b65f8f2d6fdf3c0ecd73afcf4b6f8eb99eb
+df9bdfc300f6e35f5b5837837300e6d66f9697aaedd750e7dfb024242480818b5d5b50f9f5dd5f5100b6ae5b7e0570e1000004fd494441546843ed59695bdb4610966d9c060b74af6ec99225db184309694d0b2557490305424bd3b43469feffdfe8cc4a
+c812d83c5e1dfd9087018c25afe6dd79e7d8d935c731481785617cb9a10904be3489d5edb6db80400d6a0e27d10e40ff8f34670875091ad39974db1cfc362508f279fdfafa3783e2352560c355abd7dbfc1bde3485817a3b4f7aadd6dad36f1a448148ee
+3c6951946619035b7a3d44698eb0763763ac495b38602cf54bbd91dc0667dcba9ada92f865eefd5aca1a68ce9263010acdd3caf4259531f535fc47ef535b32c16954a7af587f33c632c5dd36fcd41c71194a5e6f65c6b8cf1b45b9c618fbf3bc70f35d15
+c690888bcbcda2ac014a6bad78eff2bc3c0c251ba73e97dcc5fc6dafd5cb47039b8b12b28b28091e4459512aa024797775475f8b22402dcb23adc14a5056b091e03aefd78b7289207f3d2ddcdce0cb62d0544373da79c10a9364657a173fafd2d02cceb4
+6c7dc966df85b9d49a95b4c2a02debb90a539eac654fa6eb4b6fbd6d2812214efd08b4534a57b12f1f5dcf9365cf546ac2e18d9c224079d3fafded873fdc98488a12b9ba540b8c1869c33837e3ce970fff6a1f2321512ef4e57a582363ddd56dcf8c8912
+8581677ffa67a022754958099a592157e63c88035f21a119b89eec0dcd7e78c7134407cc1a447003e0c7702422a9295139ad92578f673863dcbfaffd16c871073558822a9491b5947c23e85747118822721cf143785d28aa1b564651ad1b1b7817a35198
+4f9b9c5ea2574e4c491b4981074ee1c92858184b863ba43ec3c630ed64181b1a3ef2358353750bd5a8b247eec580e8689eca19e034a8a3d02f2112ac082c141ad6680bc74b37345605cb37a5621038b13d14d438b022a4131a5dd4cfd668aa439dd049f1
+b19d90a50cf53807e384b237102359b34c9fc62098339d4e580c1189edde3a42948789eb8568943947b56479cbe0623f34789ed8cafe94e3f6775eec4c58963431bc9187a1924c5d056212b3e4c43c883ad306bbf87014d14b7bf0f2c5f6e4f8a7a34320
+8ec12f06b1024dd6220113c5f16422f03c2ff9b7616bd8a05e0dfc1435307ffce160fbf96c5262755689a5bb11daa3f66dcdb4021d2b5a42ded01420c0280884ae644bcff666b44c97d83df34ae80708c34b91199834961221ba6d9bf314f282c9f4d5f6
+6c369bb276e6b4a8889099c9422518f97c111d22a5d744f6fdf1f7decedec17707cff799fc924d9a53adf1d6432bd5606c45d120f8f6d9eeeecef621cdcd32c20fec7079e997e88793e93e08260b647f19107826f2fbcb6ab2e17a627772f8eae5eed1f1
+d1ee0c0e8218eb586e4a64d45f42da000ac3fe74d29d1eef1d805f760f4b1a421f536c7361e957fc417a2cd73dc4109b615a960792e4e182d26fe8a6901c9ae146198f1ac56a5b594586227f478440a7d51873113b7ff8ab600855ae7af29d65d108c6c9
+711ce43b8d5f5c5f58aae5226a05578ff3ce913459a2a14b311089757559e84063cbd36229017222534e2bccfcd8217fce513e0438277cfde9d7b3b3b3d7d0ef07f757e80a9a8b8fbefbe5edc9c9c9cf31716ae98f97ccabf3e6f4f4b47555dbac1729c2
+73cb464ee10a607314b65685d5f485674aac4a1e1e0f19fe88c244e923634c7461f97d8c3146cabe26c6c0ff8f1586c9ff5f93f71f6d61723d0ebe3db52eff4dc86a90f7bf495ced399651d078bfdfecad5d6e54da0bad80d8d9b8b838e71b6dc7b2cd49
+d5cdd043e6a4476d74f7556e57bf0259e910dc15358fb2fa7cb291ff017c7e5ff408c1757b0000000049454e44ae426082}}\f2\par\pard\plain\s1\qc\keepn1\keep1\outlinelevel0\sl258\slmult1\sb240{\f2\fs32\cf1 UNIVERSIDAD CATOLICA DE HONDURAS\line CAMPUS SAN PEDRO Y SAN PABLO}\f2\fs32\cf1\par\pard\plain\s1\qc\keepn1\keep1\outlinelevel0\sl258\slmult1\sb240{\f2\fs32\cf1 REPORTE SOLICITUD DE MONOGRAFIAS Y TESIS}\f2\fs32\cf1\par\pard\plain\ql{\field{\*\fldinst{\f1\cf0 DOCVARIABLE DATE "\{0:D\}"}}{\fldrslt{\f1\cf0 DATE}}}\f1\par}</value>
+  </data>
+</root>

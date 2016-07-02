@@ -49,13 +49,6 @@ Partial Class Form3
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.BuscardocumentosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BuscardocumentosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.BuscardocumentosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.buscardocumentosTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
-        Me.CarrerasTableAdapter = New WindowsApplication1.DataSet1TableAdapters.CarrerasTableAdapter()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -63,6 +56,13 @@ Partial Class Form3
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuscardocumentosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.buscardocumentosTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.CarrerasTableAdapter = New WindowsApplication1.DataSet1TableAdapters.CarrerasTableAdapter()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CarrerasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,56 +269,6 @@ Partial Class Form3
         Me.BuscardocumentosDataGridView.Size = New System.Drawing.Size(1045, 391)
         Me.BuscardocumentosDataGridView.TabIndex = 52
         '
-        'BuscardocumentosTableAdapter
-        '
-        Me.BuscardocumentosTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
-        Me.TableAdapterManager.EstadoTableAdapter = Nothing
-        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
-        '
-        'CarrerasTableAdapter
-        '
-        Me.CarrerasTableAdapter.ClearBeforeFill = True
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(723, 54)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(265, 20)
-        Me.TextBox3.TabIndex = 54
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(562, 57)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(155, 17)
-        Me.CheckBox4.TabIndex = 53
-        Me.CheckBox4.Text = "Por Nombre de Documento"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'Tipo_de_DocumentoTableAdapter
-        '
-        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(100, 86)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox4.TabIndex = 55
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "DocumentoID"
@@ -373,6 +323,56 @@ Partial Class Form3
         Me.DataGridViewTextBoxColumn6.HeaderText = "Tipo de Documento"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'BuscardocumentosTableAdapter
+        '
+        Me.BuscardocumentosTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'CarrerasTableAdapter
+        '
+        Me.CarrerasTableAdapter.ClearBeforeFill = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(723, 54)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(265, 20)
+        Me.TextBox3.TabIndex = 54
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(562, 57)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(155, 17)
+        Me.CheckBox4.TabIndex = 53
+        Me.CheckBox4.Text = "Por Nombre de Documento"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'Tipo_de_DocumentoTableAdapter
+        '
+        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(100, 86)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(221, 20)
+        Me.TextBox4.TabIndex = 55
         '
         'Form3
         '

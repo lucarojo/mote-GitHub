@@ -42,6 +42,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -197,12 +198,22 @@ Partial Class Form1
         Me.ToolStripButton1.Size = New System.Drawing.Size(96, 22)
         Me.ToolStripButton1.Text = "Iniciar Sesión"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(411, 100)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(925, 650)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox2)
@@ -243,4 +254,5 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents Button2 As Button
 End Class
