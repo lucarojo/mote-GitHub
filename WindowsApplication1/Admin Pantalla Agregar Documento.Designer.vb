@@ -139,11 +139,11 @@ Partial Class Form5
         'AñoLabel
         '
         AñoLabel.AutoSize = True
-        AñoLabel.Location = New System.Drawing.Point(12, 160)
+        AñoLabel.Location = New System.Drawing.Point(12, 159)
         AñoLabel.Name = "AñoLabel"
-        AñoLabel.Size = New System.Drawing.Size(29, 13)
+        AñoLabel.Size = New System.Drawing.Size(98, 13)
         AñoLabel.TabIndex = 66
-        AñoLabel.Text = "Año:"
+        AñoLabel.Text = "Fecha de Creacón:"
         '
         'Button3
         '
@@ -165,7 +165,7 @@ Partial Class Form5
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(272, 60)
+        Me.Button1.Location = New System.Drawing.Point(314, 60)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(119, 23)
         Me.Button1.TabIndex = 30
@@ -186,7 +186,7 @@ Partial Class Form5
         Me.TextBox5.Location = New System.Drawing.Point(108, 62)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(158, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(200, 20)
         Me.TextBox5.TabIndex = 24
         '
         'ToolStrip1
@@ -465,6 +465,7 @@ Partial Class Form5
         Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.DocumentosBindingSource, "AlumnoID", True))
         Me.ComboBox1.DataSource = Me.AlumnosBindingSource
         Me.ComboBox1.DisplayMember = "Nombre"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(108, 180)
         Me.ComboBox1.Name = "ComboBox1"
@@ -477,6 +478,7 @@ Partial Class Form5
         Me.ComboBox2.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.DocumentosBindingSource, "TipoDocID", True))
         Me.ComboBox2.DataSource = Me.TipoDeDocumentoBindingSource
         Me.ComboBox2.DisplayMember = "TipoDocumento"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(108, 207)
         Me.ComboBox2.Name = "ComboBox2"
@@ -496,7 +498,7 @@ Partial Class Form5
         'AñoDateTimePicker
         '
         Me.AñoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.DocumentosBindingSource, "Año", True))
-        Me.AñoDateTimePicker.Location = New System.Drawing.Point(108, 154)
+        Me.AñoDateTimePicker.Location = New System.Drawing.Point(116, 153)
         Me.AñoDateTimePicker.Name = "AñoDateTimePicker"
         Me.AñoDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.AñoDateTimePicker.TabIndex = 67

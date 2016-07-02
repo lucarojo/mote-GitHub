@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TOSHIBA\CRISTIAN;Initial Catalog=MATE;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=LUCA-PC;Initial Catalog=MATE;Integrated Security=True")>  _
         Public ReadOnly Property MATEConnectionString() As String
             Get
                 Return CType(Me("MATEConnectionString"),String)

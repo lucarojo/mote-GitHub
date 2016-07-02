@@ -244,6 +244,7 @@ Partial Class Form4
         '
         Me.ComboBox1.DataSource = Me.EstadoBindingSource
         Me.ComboBox1.DisplayMember = "Estado"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(134, 44)
         Me.ComboBox1.Name = "ComboBox1"
