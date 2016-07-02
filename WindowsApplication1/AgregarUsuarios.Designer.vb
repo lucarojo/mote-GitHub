@@ -329,6 +329,7 @@ Partial Class AgregarUsuarios
         Me.Controls.Add(Me.ContraseñaTextBox)
         Me.Controls.Add(Me.UsuariosBindingNavigator)
         Me.Name = "AgregarUsuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Usuarios"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

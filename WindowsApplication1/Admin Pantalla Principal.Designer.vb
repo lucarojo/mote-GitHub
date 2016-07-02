@@ -244,6 +244,7 @@ Partial Class Form4
         '
         Me.ComboBox1.DataSource = Me.EstadoBindingSource
         Me.ComboBox1.DisplayMember = "Estado"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(134, 44)
         Me.ComboBox1.Name = "ComboBox1"
@@ -308,6 +309,7 @@ Partial Class Form4
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "Form4"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrador"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

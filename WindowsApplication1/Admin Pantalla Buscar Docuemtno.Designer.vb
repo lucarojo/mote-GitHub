@@ -75,6 +75,7 @@ Partial Class Form3
         '
         Me.ComboBox2.DataSource = Me.TipoDeDocumentoBindingSource
         Me.ComboBox2.DisplayMember = "TipoDocumento"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(434, 84)
         Me.ComboBox2.Name = "ComboBox2"
@@ -394,6 +395,7 @@ Partial Class Form3
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Name = "Form3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Documento"
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()

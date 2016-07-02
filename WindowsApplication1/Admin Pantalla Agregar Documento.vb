@@ -1,8 +1,5 @@
 ﻿Public Class Form5
 
-    Dim source As String
-    Dim nombre As String
-
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet11.Tipo_de_Documento' table. You can move, or remove it, as needed.
         'Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet11.Tipo_de_Documento)
@@ -70,7 +67,7 @@
             pos = InStrRev(source, compares)
             Dim tmp As Integer = tam - pos
             nombre = Strings.Right(source, tmp)
-            Archivo_AdjuntoTextBox.Text = "C:\Documentos\" & nombre
+            Archivo_AdjuntoTextBox.Text = servidor & nombre
             NombreTextBox.Text = nombre
             ' My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
         End If
@@ -90,6 +87,7 @@
         DocumentosBindingSource.AddNew()
         DocumentoIDTextBox.Text = num.ToString
 
+
     End Sub
 
     Private Sub DocumentosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles DocumentosBindingNavigatorSaveItem.Click
@@ -97,7 +95,7 @@
         Me.DocumentosBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.DataSet1)
         Try
-            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+            My.Computer.FileSystem.CopyFile(source, servidor & nombre)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -126,7 +124,7 @@
             Me.Validate()
             Me.DocumentosBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.DataSet1)
-            My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
+            My.Computer.FileSystem.CopyFile(source, servidor & nombre)
             TextBox5.Clear()
             Dim rnum As Random
             Dim num As Integer

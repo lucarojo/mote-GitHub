@@ -49,7 +49,7 @@ Partial Public Class DataSet1
     
     Private tablebuscardocumentos As buscardocumentosDataTable
     
-    Private tableProcedimientoReporte As ProcedimientoReporteDataTable
+    Private tablemodificarDocumento As modificarDocumentoDataTable
     
     Private relationFK_Detalle_Carreras_Alumnos As Global.System.Data.DataRelation
     
@@ -128,8 +128,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("buscardocumentos")) Is Nothing) Then
                 MyBase.Tables.Add(New buscardocumentosDataTable(ds.Tables("buscardocumentos")))
             End If
-            If (Not (ds.Tables("ProcedimientoReporte")) Is Nothing) Then
-                MyBase.Tables.Add(New ProcedimientoReporteDataTable(ds.Tables("ProcedimientoReporte")))
+            If (Not (ds.Tables("modificarDocumento")) Is Nothing) Then
+                MyBase.Tables.Add(New modificarDocumentoDataTable(ds.Tables("modificarDocumento")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -272,9 +272,9 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property ProcedimientoReporte() As ProcedimientoReporteDataTable
+    Public ReadOnly Property modificarDocumento() As modificarDocumentoDataTable
         Get
-            Return Me.tableProcedimientoReporte
+            Return Me.tablemodificarDocumento
         End Get
     End Property
     
@@ -381,8 +381,8 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("buscardocumentos")) Is Nothing) Then
                 MyBase.Tables.Add(New buscardocumentosDataTable(ds.Tables("buscardocumentos")))
             End If
-            If (Not (ds.Tables("ProcedimientoReporte")) Is Nothing) Then
-                MyBase.Tables.Add(New ProcedimientoReporteDataTable(ds.Tables("ProcedimientoReporte")))
+            If (Not (ds.Tables("modificarDocumento")) Is Nothing) Then
+                MyBase.Tables.Add(New modificarDocumentoDataTable(ds.Tables("modificarDocumento")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -488,10 +488,10 @@ Partial Public Class DataSet1
                 Me.tablebuscardocumentos.InitVars
             End If
         End If
-        Me.tableProcedimientoReporte = CType(MyBase.Tables("ProcedimientoReporte"),ProcedimientoReporteDataTable)
+        Me.tablemodificarDocumento = CType(MyBase.Tables("modificarDocumento"),modificarDocumentoDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableProcedimientoReporte) Is Nothing) Then
-                Me.tableProcedimientoReporte.InitVars
+            If (Not (Me.tablemodificarDocumento) Is Nothing) Then
+                Me.tablemodificarDocumento.InitVars
             End If
         End If
         Me.relationFK_Detalle_Carreras_Alumnos = Me.Relations("FK_Detalle Carreras_Alumnos")
@@ -534,8 +534,8 @@ Partial Public Class DataSet1
         MyBase.Tables.Add(Me.tableupdateEstadoEnSolicitud)
         Me.tablebuscardocumentos = New buscardocumentosDataTable()
         MyBase.Tables.Add(Me.tablebuscardocumentos)
-        Me.tableProcedimientoReporte = New ProcedimientoReporteDataTable()
-        MyBase.Tables.Add(Me.tableProcedimientoReporte)
+        Me.tablemodificarDocumento = New modificarDocumentoDataTable()
+        MyBase.Tables.Add(Me.tablemodificarDocumento)
         Me.relationFK_Detalle_Carreras_Alumnos = New Global.System.Data.DataRelation("FK_Detalle Carreras_Alumnos", New Global.System.Data.DataColumn() {Me.tableAlumnos.AlumnoIDColumn}, New Global.System.Data.DataColumn() {Me.tableDetalle_Carreras.AlumnoIDColumn}, false)
         Me.Relations.Add(Me.relationFK_Detalle_Carreras_Alumnos)
         Me.relationFK_Detalle_Carreras_Carreras = New Global.System.Data.DataRelation("FK_Detalle Carreras_Carreras", New Global.System.Data.DataColumn() {Me.tableCarreras.CarreraIDColumn}, New Global.System.Data.DataColumn() {Me.tableDetalle_Carreras.CarreraIDColumn}, false)
@@ -624,7 +624,7 @@ Partial Public Class DataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeProcedimientoReporte() As Boolean
+    Private Function ShouldSerializemodificarDocumento() As Boolean
         Return false
     End Function
     
@@ -723,7 +723,7 @@ Partial Public Class DataSet1
     Public Delegate Sub buscardocumentosRowChangeEventHandler(ByVal sender As Object, ByVal e As buscardocumentosRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub ProcedimientoReporteRowChangeEventHandler(ByVal sender As Object, ByVal e As ProcedimientoReporteRowChangeEvent)
+    Public Delegate Sub modificarDocumentoRowChangeEventHandler(ByVal sender As Object, ByVal e As modificarDocumentoRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -4403,22 +4403,24 @@ Partial Public Class DataSet1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ProcedimientoReporteDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ProcedimientoReporteRow)
-        
-        Private columnNombre_Solicitante As Global.System.Data.DataColumn
-        
-        Private columnNumero_Cuenta_Solicitante As Global.System.Data.DataColumn
+    Partial Public Class modificarDocumentoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of modificarDocumentoRow)
         
         Private columnNombre As Global.System.Data.DataColumn
         
-        Private columnFecha_Creacion As Global.System.Data.DataColumn
+        Private columnAño As Global.System.Data.DataColumn
+        
+        Private columnArchivo_Adjunto As Global.System.Data.DataColumn
+        
+        Private columnAlumnoID As Global.System.Data.DataColumn
+        
+        Private columnTipoDocID As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "ProcedimientoReporte"
+            Me.TableName = "modificarDocumento"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -4451,22 +4453,6 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nombre_SolicitanteColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNombre_Solicitante
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Numero_Cuenta_SolicitanteColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNumero_Cuenta_Solicitante
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property NombreColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnNombre
@@ -4475,9 +4461,33 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Fecha_CreacionColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property AñoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnFecha_Creacion
+                Return Me.columnAño
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Archivo_AdjuntoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnArchivo_Adjunto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AlumnoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAlumnoID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property TipoDocIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTipoDocID
             End Get
         End Property
         
@@ -4492,44 +4502,44 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ProcedimientoReporteRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As modificarDocumentoRow
             Get
-                Return CType(Me.Rows(index),ProcedimientoReporteRow)
+                Return CType(Me.Rows(index),modificarDocumentoRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event ProcedimientoReporteRowChanging As ProcedimientoReporteRowChangeEventHandler
+        Public Event modificarDocumentoRowChanging As modificarDocumentoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event ProcedimientoReporteRowChanged As ProcedimientoReporteRowChangeEventHandler
+        Public Event modificarDocumentoRowChanged As modificarDocumentoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event ProcedimientoReporteRowDeleting As ProcedimientoReporteRowChangeEventHandler
+        Public Event modificarDocumentoRowDeleting As modificarDocumentoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event ProcedimientoReporteRowDeleted As ProcedimientoReporteRowChangeEventHandler
+        Public Event modificarDocumentoRowDeleted As modificarDocumentoRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddProcedimientoReporteRow(ByVal row As ProcedimientoReporteRow)
+        Public Overloads Sub AddmodificarDocumentoRow(ByVal row As modificarDocumentoRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddProcedimientoReporteRow(ByVal Nombre_Solicitante As String, ByVal Numero_Cuenta_Solicitante As String, ByVal Nombre As String, ByVal Fecha_Creacion As Date) As ProcedimientoReporteRow
-            Dim rowProcedimientoReporteRow As ProcedimientoReporteRow = CType(Me.NewRow,ProcedimientoReporteRow)
-            Dim columnValuesArray() As Object = New Object() {Nombre_Solicitante, Numero_Cuenta_Solicitante, Nombre, Fecha_Creacion}
-            rowProcedimientoReporteRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowProcedimientoReporteRow)
-            Return rowProcedimientoReporteRow
+        Public Overloads Function AddmodificarDocumentoRow(ByVal Nombre As String, ByVal Año As Date, ByVal Archivo_Adjunto As String, ByVal AlumnoID As String, ByVal TipoDocID As String) As modificarDocumentoRow
+            Dim rowmodificarDocumentoRow As modificarDocumentoRow = CType(Me.NewRow,modificarDocumentoRow)
+            Dim columnValuesArray() As Object = New Object() {Nombre, Año, Archivo_Adjunto, AlumnoID, TipoDocID}
+            rowmodificarDocumentoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowmodificarDocumentoRow)
+            Return rowmodificarDocumentoRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ProcedimientoReporteDataTable = CType(MyBase.Clone,ProcedimientoReporteDataTable)
+            Dim cln As modificarDocumentoDataTable = CType(MyBase.Clone,modificarDocumentoDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -4537,58 +4547,62 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ProcedimientoReporteDataTable()
+            Return New modificarDocumentoDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnNombre_Solicitante = MyBase.Columns("Nombre_Solicitante")
-            Me.columnNumero_Cuenta_Solicitante = MyBase.Columns("Numero_Cuenta_Solicitante")
             Me.columnNombre = MyBase.Columns("Nombre")
-            Me.columnFecha_Creacion = MyBase.Columns("Fecha_Creacion")
+            Me.columnAño = MyBase.Columns("Año")
+            Me.columnArchivo_Adjunto = MyBase.Columns("Archivo_Adjunto")
+            Me.columnAlumnoID = MyBase.Columns("AlumnoID")
+            Me.columnTipoDocID = MyBase.Columns("TipoDocID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnNombre_Solicitante = New Global.System.Data.DataColumn("Nombre_Solicitante", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombre_Solicitante)
-            Me.columnNumero_Cuenta_Solicitante = New Global.System.Data.DataColumn("Numero_Cuenta_Solicitante", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNumero_Cuenta_Solicitante)
             Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombre)
-            Me.columnFecha_Creacion = New Global.System.Data.DataColumn("Fecha_Creacion", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFecha_Creacion)
-            Me.columnNombre_Solicitante.MaxLength = 200
-            Me.columnNumero_Cuenta_Solicitante.MaxLength = 15
+            Me.columnAño = New Global.System.Data.DataColumn("Año", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAño)
+            Me.columnArchivo_Adjunto = New Global.System.Data.DataColumn("Archivo_Adjunto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnArchivo_Adjunto)
+            Me.columnAlumnoID = New Global.System.Data.DataColumn("AlumnoID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAlumnoID)
+            Me.columnTipoDocID = New Global.System.Data.DataColumn("TipoDocID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTipoDocID)
             Me.columnNombre.MaxLength = 500
+            Me.columnArchivo_Adjunto.MaxLength = 500
+            Me.columnAlumnoID.MaxLength = 10
+            Me.columnTipoDocID.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewProcedimientoReporteRow() As ProcedimientoReporteRow
-            Return CType(Me.NewRow,ProcedimientoReporteRow)
+        Public Function NewmodificarDocumentoRow() As modificarDocumentoRow
+            Return CType(Me.NewRow,modificarDocumentoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ProcedimientoReporteRow(builder)
+            Return New modificarDocumentoRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ProcedimientoReporteRow)
+            Return GetType(modificarDocumentoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.ProcedimientoReporteRowChangedEvent) Is Nothing) Then
-                RaiseEvent ProcedimientoReporteRowChanged(Me, New ProcedimientoReporteRowChangeEvent(CType(e.Row,ProcedimientoReporteRow), e.Action))
+            If (Not (Me.modificarDocumentoRowChangedEvent) Is Nothing) Then
+                RaiseEvent modificarDocumentoRowChanged(Me, New modificarDocumentoRowChangeEvent(CType(e.Row,modificarDocumentoRow), e.Action))
             End If
         End Sub
         
@@ -4596,8 +4610,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.ProcedimientoReporteRowChangingEvent) Is Nothing) Then
-                RaiseEvent ProcedimientoReporteRowChanging(Me, New ProcedimientoReporteRowChangeEvent(CType(e.Row,ProcedimientoReporteRow), e.Action))
+            If (Not (Me.modificarDocumentoRowChangingEvent) Is Nothing) Then
+                RaiseEvent modificarDocumentoRowChanging(Me, New modificarDocumentoRowChangeEvent(CType(e.Row,modificarDocumentoRow), e.Action))
             End If
         End Sub
         
@@ -4605,8 +4619,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.ProcedimientoReporteRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ProcedimientoReporteRowDeleted(Me, New ProcedimientoReporteRowChangeEvent(CType(e.Row,ProcedimientoReporteRow), e.Action))
+            If (Not (Me.modificarDocumentoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent modificarDocumentoRowDeleted(Me, New modificarDocumentoRowChangeEvent(CType(e.Row,modificarDocumentoRow), e.Action))
             End If
         End Sub
         
@@ -4614,14 +4628,14 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.ProcedimientoReporteRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ProcedimientoReporteRowDeleting(Me, New ProcedimientoReporteRowChangeEvent(CType(e.Row,ProcedimientoReporteRow), e.Action))
+            If (Not (Me.modificarDocumentoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent modificarDocumentoRowDeleting(Me, New modificarDocumentoRowChangeEvent(CType(e.Row,modificarDocumentoRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveProcedimientoReporteRow(ByVal row As ProcedimientoReporteRow)
+        Public Sub RemovemodificarDocumentoRow(ByVal row As modificarDocumentoRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -4648,7 +4662,7 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ProcedimientoReporteDataTable"
+            attribute2.FixedValue = "modificarDocumentoDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6207,126 +6221,151 @@ Partial Public Class DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class ProcedimientoReporteRow
+    Partial Public Class modificarDocumentoRow
         Inherits Global.System.Data.DataRow
         
-        Private tableProcedimientoReporte As ProcedimientoReporteDataTable
+        Private tablemodificarDocumento As modificarDocumentoDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableProcedimientoReporte = CType(Me.Table,ProcedimientoReporteDataTable)
+            Me.tablemodificarDocumento = CType(Me.Table,modificarDocumentoDataTable)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nombre_Solicitante() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableProcedimientoReporte.Nombre_SolicitanteColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nombre_Solicitante' in table 'ProcedimientoReporte' is DBNu"& _ 
-                            "ll.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableProcedimientoReporte.Nombre_SolicitanteColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Numero_Cuenta_Solicitante() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableProcedimientoReporte.Numero_Cuenta_SolicitanteColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Numero_Cuenta_Solicitante' in table 'ProcedimientoReporte' "& _ 
-                            "is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableProcedimientoReporte.Numero_Cuenta_SolicitanteColumn) = value
-            End Set
-        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Nombre() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableProcedimientoReporte.NombreColumn),String)
+                    Return CType(Me(Me.tablemodificarDocumento.NombreColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nombre' in table 'ProcedimientoReporte' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nombre' in table 'modificarDocumento' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableProcedimientoReporte.NombreColumn) = value
+                Me(Me.tablemodificarDocumento.NombreColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Fecha_Creacion() As Date
+        Public Property Año() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn),Date)
+                    Return CType(Me(Me.tablemodificarDocumento.AñoColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fecha_Creacion' in table 'ProcedimientoReporte' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Año' in table 'modificarDocumento' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn) = value
+                Me(Me.tablemodificarDocumento.AñoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNombre_SolicitanteNull() As Boolean
-            Return Me.IsNull(Me.tableProcedimientoReporte.Nombre_SolicitanteColumn)
-        End Function
+        Public Property Archivo_Adjunto() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemodificarDocumento.Archivo_AdjuntoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Archivo_Adjunto' in table 'modificarDocumento' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemodificarDocumento.Archivo_AdjuntoColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNombre_SolicitanteNull()
-            Me(Me.tableProcedimientoReporte.Nombre_SolicitanteColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property AlumnoID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemodificarDocumento.AlumnoIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AlumnoID' in table 'modificarDocumento' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemodificarDocumento.AlumnoIDColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNumero_Cuenta_SolicitanteNull() As Boolean
-            Return Me.IsNull(Me.tableProcedimientoReporte.Numero_Cuenta_SolicitanteColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNumero_Cuenta_SolicitanteNull()
-            Me(Me.tableProcedimientoReporte.Numero_Cuenta_SolicitanteColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property TipoDocID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemodificarDocumento.TipoDocIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TipoDocID' in table 'modificarDocumento' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemodificarDocumento.TipoDocIDColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsNombreNull() As Boolean
-            Return Me.IsNull(Me.tableProcedimientoReporte.NombreColumn)
+            Return Me.IsNull(Me.tablemodificarDocumento.NombreColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetNombreNull()
-            Me(Me.tableProcedimientoReporte.NombreColumn) = Global.System.Convert.DBNull
+            Me(Me.tablemodificarDocumento.NombreColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFecha_CreacionNull() As Boolean
-            Return Me.IsNull(Me.tableProcedimientoReporte.Fecha_CreacionColumn)
+        Public Function IsAñoNull() As Boolean
+            Return Me.IsNull(Me.tablemodificarDocumento.AñoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFecha_CreacionNull()
-            Me(Me.tableProcedimientoReporte.Fecha_CreacionColumn) = Global.System.Convert.DBNull
+        Public Sub SetAñoNull()
+            Me(Me.tablemodificarDocumento.AñoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsArchivo_AdjuntoNull() As Boolean
+            Return Me.IsNull(Me.tablemodificarDocumento.Archivo_AdjuntoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetArchivo_AdjuntoNull()
+            Me(Me.tablemodificarDocumento.Archivo_AdjuntoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAlumnoIDNull() As Boolean
+            Return Me.IsNull(Me.tablemodificarDocumento.AlumnoIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAlumnoIDNull()
+            Me(Me.tablemodificarDocumento.AlumnoIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTipoDocIDNull() As Boolean
+            Return Me.IsNull(Me.tablemodificarDocumento.TipoDocIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTipoDocIDNull()
+            Me(Me.tablemodificarDocumento.TipoDocIDColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6766,16 +6805,16 @@ Partial Public Class DataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class ProcedimientoReporteRowChangeEvent
+    Public Class modificarDocumentoRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As ProcedimientoReporteRow
+        Private eventRow As modificarDocumentoRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As ProcedimientoReporteRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As modificarDocumentoRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -6783,7 +6822,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As ProcedimientoReporteRow
+        Public ReadOnly Property Row() As modificarDocumentoRow
             Get
                 Return Me.eventRow
             End Get
@@ -9432,7 +9471,7 @@ Namespace DataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ProcedimientoReporteTableAdapter
+    Partial Public Class modificarDocumentoTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -9549,11 +9588,12 @@ Namespace DataSet1TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "ProcedimientoReporte"
-            tableMapping.ColumnMappings.Add("Nombre_Solicitante", "Nombre_Solicitante")
-            tableMapping.ColumnMappings.Add("Numero_Cuenta_Solicitante", "Numero_Cuenta_Solicitante")
+            tableMapping.DataSetTable = "modificarDocumento"
             tableMapping.ColumnMappings.Add("Nombre", "Nombre")
-            tableMapping.ColumnMappings.Add("Fecha_Creacion", "Fecha_Creacion")
+            tableMapping.ColumnMappings.Add("Año", "Año")
+            tableMapping.ColumnMappings.Add("Archivo_Adjunto", "Archivo_Adjunto")
+            tableMapping.ColumnMappings.Add("AlumnoID", "AlumnoID")
+            tableMapping.ColumnMappings.Add("TipoDocID", "TipoDocID")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -9570,28 +9610,52 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.ProcedimientoReporte"
+            Me._commandCollection(0).CommandText = "dbo.modificarDocumento"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inicio", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Final", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@docuid", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@año", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@arch", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tipoid", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@aluid", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function FillReporte(ByVal dataTable As DataSet1.ProcedimientoReporteDataTable, ByVal Inicio As Global.System.Nullable(Of Date), ByVal Final As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.modificarDocumentoDataTable, ByVal docuid As String, ByVal nombre As String, ByVal año As Global.System.Nullable(Of Date), ByVal arch As String, ByVal tipoid As String, ByVal aluid As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Inicio.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(Inicio.Value,Date)
-            Else
+            If (docuid Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Final.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Final.Value,Date)
             Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(docuid,String)
+            End If
+            If (nombre Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(nombre,String)
+            End If
+            If (año.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(año.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (arch Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(arch,String)
+            End If
+            If (tipoid Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(5).Value = CType(tipoid,String)
+            End If
+            If (aluid Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(6).Value = CType(aluid,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
