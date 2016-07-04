@@ -18,7 +18,7 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            Me.ProcedimientoReporteTableAdapter.FillReporte(Me.DataSet1.ProcedimientoReporte, New System.Nullable(Of Date)(CType(DateTimePicker1.Text, Date)), New System.Nullable(Of Date)(CType(DateTimePicker2.Text, Date)))
+            Me.ProcedimientoReporteTableAdapter.Fill(Me.DataSet1.ProcedimientoReporte, New System.Nullable(Of Date)(CType(DateTimePicker1.Text, Date)), New System.Nullable(Of Date)(CType(DateTimePicker2.Text, Date)))
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
