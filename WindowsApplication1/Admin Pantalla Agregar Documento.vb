@@ -110,10 +110,10 @@
             num = rnum.Next(1, 999999999)
             DocumentosBindingSource.AddNew()
             DocumentoIDTextBox.Text = num.ToString
+            Button2.Enabled = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        Button2.Enabled = True
 
 
     End Sub
