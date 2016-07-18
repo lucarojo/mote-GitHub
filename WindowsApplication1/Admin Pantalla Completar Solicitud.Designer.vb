@@ -25,19 +25,7 @@ Partial Class Form7
         Me.components = New System.ComponentModel.Container()
         Dim Nombre_SolicitanteLabel As System.Windows.Forms.Label
         Dim Numero_Cuenta_SolicitanteLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.AgregarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarDocumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.MantenimientoUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientoAlumnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Nombre_SolicitanteTextBox = New System.Windows.Forms.TextBox()
@@ -64,7 +52,6 @@ Partial Class Form7
         Me.UpdateEstadoEnSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter()
         Nombre_SolicitanteLabel = New System.Windows.Forms.Label()
         Numero_Cuenta_SolicitanteLabel = New System.Windows.Forms.Label()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocumentosDeSolicitudDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,7 +61,7 @@ Partial Class Form7
         'Nombre_SolicitanteLabel
         '
         Nombre_SolicitanteLabel.AutoSize = True
-        Nombre_SolicitanteLabel.Location = New System.Drawing.Point(12, 45)
+        Nombre_SolicitanteLabel.Location = New System.Drawing.Point(12, 23)
         Nombre_SolicitanteLabel.Name = "Nombre_SolicitanteLabel"
         Nombre_SolicitanteLabel.Size = New System.Drawing.Size(99, 13)
         Nombre_SolicitanteLabel.TabIndex = 54
@@ -83,7 +70,7 @@ Partial Class Form7
         'Numero_Cuenta_SolicitanteLabel
         '
         Numero_Cuenta_SolicitanteLabel.AutoSize = True
-        Numero_Cuenta_SolicitanteLabel.Location = New System.Drawing.Point(358, 45)
+        Numero_Cuenta_SolicitanteLabel.Location = New System.Drawing.Point(358, 23)
         Numero_Cuenta_SolicitanteLabel.Name = "Numero_Cuenta_SolicitanteLabel"
         Numero_Cuenta_SolicitanteLabel.Size = New System.Drawing.Size(136, 13)
         Numero_Cuenta_SolicitanteLabel.TabIndex = 55
@@ -93,96 +80,15 @@ Partial Class Form7
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 73)
+        Me.Label3.Location = New System.Drawing.Point(12, 51)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(140, 15)
         Me.Label3.TabIndex = 46
         Me.Label3.Text = "Documentos Solicitados"
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1048, 25)
-        Me.ToolStrip1.TabIndex = 50
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton5
-        '
-        Me.ToolStripButton5.Image = CType(resources.GetObject("ToolStripButton5.Image"), System.Drawing.Image)
-        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(56, 22)
-        Me.ToolStripButton5.Text = "Inicio"
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(117, 22)
-        Me.ToolStripButton3.Text = "Generar Reportes"
-        '
-        'ToolStripButton4
-        '
-        Me.ToolStripButton4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarDocumentoToolStripMenuItem, Me.BuscarDocumentoToolStripMenuItem})
-        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
-        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(118, 22)
-        Me.ToolStripButton4.Text = "Mantenimiento"
-        '
-        'AgregarDocumentoToolStripMenuItem
-        '
-        Me.AgregarDocumentoToolStripMenuItem.Name = "AgregarDocumentoToolStripMenuItem"
-        Me.AgregarDocumentoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.AgregarDocumentoToolStripMenuItem.Text = "Agregar Documento"
-        '
-        'BuscarDocumentoToolStripMenuItem
-        '
-        Me.BuscarDocumentoToolStripMenuItem.Name = "BuscarDocumentoToolStripMenuItem"
-        Me.BuscarDocumentoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.BuscarDocumentoToolStripMenuItem.Text = "Buscar Documento"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoUsuariosToolStripMenuItem, Me.MantenimientoAlumnosToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(81, 22)
-        Me.ToolStripButton1.Text = "Usuarios"
-        '
-        'MantenimientoUsuariosToolStripMenuItem
-        '
-        Me.MantenimientoUsuariosToolStripMenuItem.Name = "MantenimientoUsuariosToolStripMenuItem"
-        Me.MantenimientoUsuariosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.MantenimientoUsuariosToolStripMenuItem.Text = "Mantenimiento Usuarios"
-        '
-        'MantenimientoAlumnosToolStripMenuItem
-        '
-        Me.MantenimientoAlumnosToolStripMenuItem.Name = "MantenimientoAlumnosToolStripMenuItem"
-        Me.MantenimientoAlumnosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.MantenimientoAlumnosToolStripMenuItem.Text = "Mantenimiento Alumnos"
-        '
-        'CerrarSesiónToolStripMenuItem
-        '
-        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(134, 22)
-        Me.ToolStripButton2.Text = "Pantalla De Usuarios"
-        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(677, 426)
+        Me.Button1.Location = New System.Drawing.Point(677, 404)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(164, 38)
         Me.Button1.TabIndex = 51
@@ -191,7 +97,7 @@ Partial Class Form7
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(879, 28)
+        Me.TextBox2.Location = New System.Drawing.Point(879, 6)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 54
@@ -200,7 +106,7 @@ Partial Class Form7
         'Nombre_SolicitanteTextBox
         '
         Me.Nombre_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Nombre_Solicitante", True))
-        Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(117, 42)
+        Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(117, 20)
         Me.Nombre_SolicitanteTextBox.Name = "Nombre_SolicitanteTextBox"
         Me.Nombre_SolicitanteTextBox.Size = New System.Drawing.Size(219, 20)
         Me.Nombre_SolicitanteTextBox.TabIndex = 55
@@ -218,7 +124,7 @@ Partial Class Form7
         'Numero_Cuenta_SolicitanteTextBox
         '
         Me.Numero_Cuenta_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Numero_Cuenta_Solicitante", True))
-        Me.Numero_Cuenta_SolicitanteTextBox.Location = New System.Drawing.Point(500, 42)
+        Me.Numero_Cuenta_SolicitanteTextBox.Location = New System.Drawing.Point(500, 20)
         Me.Numero_Cuenta_SolicitanteTextBox.Name = "Numero_Cuenta_SolicitanteTextBox"
         Me.Numero_Cuenta_SolicitanteTextBox.Size = New System.Drawing.Size(175, 20)
         Me.Numero_Cuenta_SolicitanteTextBox.TabIndex = 56
@@ -231,7 +137,7 @@ Partial Class Form7
         Me.DocumentosDeSolicitudDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DocumentosDeSolicitudDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Archivo_Adjunto, Me.Descargar, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.DocumentosDeSolicitudDataGridView.DataSource = Me.DocumentosDeSolicitudBindingSource
-        Me.DocumentosDeSolicitudDataGridView.Location = New System.Drawing.Point(12, 91)
+        Me.DocumentosDeSolicitudDataGridView.Location = New System.Drawing.Point(12, 69)
         Me.DocumentosDeSolicitudDataGridView.Name = "DocumentosDeSolicitudDataGridView"
         Me.DocumentosDeSolicitudDataGridView.ReadOnly = True
         Me.DocumentosDeSolicitudDataGridView.Size = New System.Drawing.Size(1016, 318)
@@ -317,7 +223,7 @@ Partial Class Form7
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(847, 426)
+        Me.Button2.Location = New System.Drawing.Point(847, 404)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(164, 38)
         Me.Button2.TabIndex = 57
@@ -326,7 +232,7 @@ Partial Class Form7
         '
         'EstadoID
         '
-        Me.EstadoID.Location = New System.Drawing.Point(15, 452)
+        Me.EstadoID.Location = New System.Drawing.Point(15, 430)
         Me.EstadoID.Name = "EstadoID"
         Me.EstadoID.Size = New System.Drawing.Size(100, 20)
         Me.EstadoID.TabIndex = 62
@@ -334,7 +240,7 @@ Partial Class Form7
         '
         'SolicitudID
         '
-        Me.SolicitudID.Location = New System.Drawing.Point(15, 426)
+        Me.SolicitudID.Location = New System.Drawing.Point(15, 404)
         Me.SolicitudID.Name = "SolicitudID"
         Me.SolicitudID.Size = New System.Drawing.Size(100, 20)
         Me.SolicitudID.TabIndex = 63
@@ -382,14 +288,11 @@ Partial Class Form7
         Me.Controls.Add(Me.DocumentosDeSolicitudDataGridView)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Button2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form7"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Completar Solicitud"
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocumentosDeSolicitudDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -399,16 +302,6 @@ Partial Class Form7
 
     End Sub
     Friend WithEvents Label3 As Label
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton5 As ToolStripButton
-    Friend WithEvents ToolStripButton3 As ToolStripButton
-    Friend WithEvents ToolStripButton4 As ToolStripDropDownButton
-    Friend WithEvents AgregarDocumentoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BuscarDocumentoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripButton1 As ToolStripDropDownButton
-    Friend WithEvents MantenimientoUsuariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents Button1 As Button
     Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents DocumentosDeSolicitudBindingSource As BindingSource
@@ -423,7 +316,6 @@ Partial Class Form7
     Friend WithEvents UpdateEstadoEnSolicitudTableAdapter As DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter
     Friend WithEvents EstadoID As TextBox
     Friend WithEvents SolicitudID As TextBox
-    Friend WithEvents MantenimientoAlumnosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Archivo_Adjunto As DataGridViewTextBoxColumn
     Friend WithEvents Descargar As DataGridViewButtonColumn

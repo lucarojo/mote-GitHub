@@ -46,13 +46,15 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        NombreTextBox.Clear()
-        ContraseñaTextBox.Clear()
-        Try
-            UsuariosBindingSource.RemoveCurrent()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'NombreTextBox.Clear()
+        'ContraseñaTextBox.Clear()
+        'Try
+        '    UsuariosBindingSource.RemoveCurrent()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+        Me.Close()
+
 
     End Sub
 

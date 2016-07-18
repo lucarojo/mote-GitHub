@@ -97,6 +97,12 @@
     <Compile Include="AgregarAlumnos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="agregarcarreras.Designer.vb">
+      <DependentUpon>agregarcarreras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agregarcarreras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AgregarUsuarios.Designer.vb">
       <DependentUpon>AgregarUsuarios.vb</DependentUpon>
     </Compile>
@@ -127,6 +133,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
+    <Compile Include="OpcionesAvanzadas.Designer.vb">
+      <DependentUpon>OpcionesAvanzadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionesAvanzadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usuario Pantalla Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,9 @@
     <EmbeddedResource Include="AgregarAlumnos.resx">
       <DependentUpon>AgregarAlumnos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="agregarcarreras.resx">
+      <DependentUpon>agregarcarreras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuarios.resx">
       <DependentUpon>AgregarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +215,9 @@
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="OpcionesAvanzadas.resx">
+      <DependentUpon>OpcionesAvanzadas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario Pantalla Principal.resx">
       <DependentUpon>Usuario Pantalla Principal.vb</DependentUpon>
     </EmbeddedResource>

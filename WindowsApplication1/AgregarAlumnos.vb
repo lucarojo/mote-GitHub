@@ -32,12 +32,13 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        NombreTextBox.Clear()
-        NumeroDeCuentaTextBox.Clear()
-        Try
-            AlumnosBindingSource.RemoveCurrent()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'NombreTextBox.Clear()
+        'NumeroDeCuentaTextBox.Clear()
+        'Try
+        '    AlumnosBindingSource.RemoveCurrent()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+        Me.Close()
     End Sub
 End Class

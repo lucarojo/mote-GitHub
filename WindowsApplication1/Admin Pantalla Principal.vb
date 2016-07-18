@@ -37,10 +37,6 @@
         Me.Close()
     End Sub
 
-    Private Sub MantenimientoUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoUsuariosToolStripMenuItem.Click
-        AgregarUsuarios.Show()
-    End Sub
-
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
         Form1.Show()
         Me.Close()
@@ -73,7 +69,19 @@
 
     End Sub
 
-    Private Sub MantenimientoAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoAlumnosToolStripMenuItem.Click
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
         AgregarAlumnos.Show()
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem1.Click
+        AgregarUsuarios.Show()
+    End Sub
+
+    Private Sub CarrerasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CarrerasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub OpcionesAvanzadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpcionesAvanzadasToolStripMenuItem.Click
+        OpcionesAvanzadas.Show()
     End Sub
 End Class

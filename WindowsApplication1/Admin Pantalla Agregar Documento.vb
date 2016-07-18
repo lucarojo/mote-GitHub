@@ -26,35 +26,10 @@
         DocumentosBindingSource.AddNew()
         DocumentoIDTextBox.Text = num.ToString
         'AñoTextBox.Text = Today.Date.Year
+        Button2.Enabled = False
+
     End Sub
 
-    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
-        Form4.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub AgregarDocumentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarDocumentoToolStripMenuItem.Click
-        'Form5.Show()
-        'Me.Close()
-    End Sub
-
-    Private Sub BuscarDocumentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarDocumentoToolStripMenuItem.Click
-        Form3.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub MantenimientoUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoUsuariosToolStripMenuItem.Click
-        AgregarUsuarios.Show()
-    End Sub
-
-    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
-        Form1.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
-        Form1.Show()
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim file As New OpenFileDialog()
@@ -105,18 +80,21 @@
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        DocumentoIDTextBox.Clear()
-        NombreTextBox.Clear()
-        TextBox5.Clear()
-        Archivo_AdjuntoTextBox.Clear()
-        'AñoTextBox.Clear()
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
-        Try
-            DocumentosBindingSource.RemoveCurrent()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'DocumentoIDTextBox.Clear()
+        'NombreTextBox.Clear()
+        'TextBox5.Clear()
+        'Archivo_AdjuntoTextBox.Clear()
+        ''AñoTextBox.Clear()
+        'ComboBox1.Text = ""
+        'ComboBox2.Text = ""
+        'Try
+        '    DocumentosBindingSource.RemoveCurrent()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+        Form4.Show()
+        Me.Close()
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -135,15 +113,48 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        Button2.Enabled = True
 
 
     End Sub
 
-    Private Sub MantenimientoAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoAlumnosToolStripMenuItem.Click
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        Form4.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ToolStripButton7_Click(sender As Object, e As EventArgs) Handles ToolStripButton7.Click
+        Form9.Show()
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Form3.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        'Form5.Show()
+        'Me.Close()
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem1.Click
+        AgregarUsuarios.Show()
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
         AgregarAlumnos.Show()
     End Sub
 
-    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        Form9.Show()
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        Form1.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ToolStripButton8_Click(sender As Object, e As EventArgs) Handles ToolStripButton8.Click
+        Form1.Show()
+    End Sub
+
+    Private Sub OpcionesAvanzadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpcionesAvanzadasToolStripMenuItem.Click
+        OpcionesAvanzadas.Show()
     End Sub
 End Class
