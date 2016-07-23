@@ -183,6 +183,7 @@ Partial Class Form3
         Me.BuscardocumentosDataGridView.AllowUserToAddRows = False
         Me.BuscardocumentosDataGridView.AllowUserToDeleteRows = False
         Me.BuscardocumentosDataGridView.AutoGenerateColumns = False
+        Me.BuscardocumentosDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.BuscardocumentosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BuscardocumentosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Editar, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.BuscardocumentosDataGridView.DataSource = Me.BuscardocumentosBindingSource
@@ -262,6 +263,7 @@ Partial Class Form3
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
@@ -299,10 +301,11 @@ Partial Class Form3
         '
         'ToolStrip2
         '
+        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton6, Me.ToolStripButton7, Me.ToolStripDropDownButton1, Me.ToolStripDropDownButton2, Me.ToolStripButton8})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(1072, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(530, 25)
         Me.ToolStrip2.TabIndex = 56
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -401,6 +404,7 @@ Partial Class Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1072, 550)
         Me.Controls.Add(Me.ToolStrip2)
         Me.Controls.Add(Me.TextBox4)

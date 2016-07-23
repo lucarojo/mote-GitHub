@@ -361,6 +361,7 @@ Partial Class Form5
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
@@ -490,19 +491,19 @@ Partial Class Form5
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem.Text = "Alumnos"
         '
         'CarrerasToolStripMenuItem
         '
         Me.CarrerasToolStripMenuItem.Name = "CarrerasToolStripMenuItem"
-        Me.CarrerasToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.CarrerasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CarrerasToolStripMenuItem.Text = "Carreras"
         '
         'UsuariosToolStripMenuItem1
         '
         Me.UsuariosToolStripMenuItem1.Name = "UsuariosToolStripMenuItem1"
-        Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
+        Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem1.Text = "Usuarios"
         '
         'OpcionesAvanzadasToolStripMenuItem
@@ -529,6 +530,7 @@ Partial Class Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(707, 261)
         Me.Controls.Add(Me.ToolStrip2)
         Me.Controls.Add(AñoLabel)

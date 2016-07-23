@@ -133,10 +133,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
-    <Compile Include="OpcionesAvanzadas.Designer.vb">
-      <DependentUpon>OpcionesAvanzadas.vb</DependentUpon>
+    <Compile Include="opcionesavanzadas.Designer.vb">
+      <DependentUpon>opcionesavanzadas.vb</DependentUpon>
     </Compile>
-    <Compile Include="OpcionesAvanzadas.vb">
+    <Compile Include="opcionesavanzadas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuario Pantalla Principal.vb">
@@ -215,9 +215,6 @@
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
-    <EmbeddedResource Include="OpcionesAvanzadas.resx">
-      <DependentUpon>OpcionesAvanzadas.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Usuario Pantalla Principal.resx">
       <DependentUpon>Usuario Pantalla Principal.vb</DependentUpon>
     </EmbeddedResource>

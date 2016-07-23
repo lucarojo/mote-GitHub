@@ -70,7 +70,7 @@ Partial Class Form4
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(677, 9)
+        Me.Label3.Location = New System.Drawing.Point(697, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 25
@@ -78,10 +78,11 @@ Partial Class Form4
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(862, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(499, 25)
         Me.ToolStrip1.TabIndex = 49
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -294,6 +295,7 @@ Partial Class Form4
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
@@ -323,6 +325,7 @@ Partial Class Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(862, 526)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)

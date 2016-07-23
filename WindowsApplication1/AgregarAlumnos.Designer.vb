@@ -255,7 +255,7 @@ Partial Class AgregarAlumnos
         Me.Detalle_CarrerasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Detalle_CarrerasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1})
         Me.Detalle_CarrerasDataGridView.DataSource = Me.Detalle_CarrerasBindingSource
-        Me.Detalle_CarrerasDataGridView.Location = New System.Drawing.Point(345, 12)
+        Me.Detalle_CarrerasDataGridView.Location = New System.Drawing.Point(351, 28)
         Me.Detalle_CarrerasDataGridView.Name = "Detalle_CarrerasDataGridView"
         Me.Detalle_CarrerasDataGridView.Size = New System.Drawing.Size(344, 238)
         Me.Detalle_CarrerasDataGridView.TabIndex = 7
@@ -327,7 +327,7 @@ Partial Class AgregarAlumnos
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(382, 271)
+        Me.Button3.Location = New System.Drawing.Point(387, 272)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(136, 39)
         Me.Button3.TabIndex = 12
@@ -336,7 +336,7 @@ Partial Class AgregarAlumnos
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(524, 271)
+        Me.Button2.Location = New System.Drawing.Point(529, 272)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 39)
         Me.Button2.TabIndex = 11
@@ -347,7 +347,8 @@ Partial Class AgregarAlumnos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(707, 321)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClientSize = New System.Drawing.Size(707, 325)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

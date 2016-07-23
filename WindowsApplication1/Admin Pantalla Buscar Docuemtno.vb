@@ -113,6 +113,6 @@
     End Sub
 
     Private Sub CarrerasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CarrerasToolStripMenuItem.Click
-        'agregarcarreras.show()
+        agregarcarreras.Show()
     End Sub
 End Class

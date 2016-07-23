@@ -44,9 +44,6 @@ Partial Class Form1
         Me.BuscardocumentosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.buscardocumentosTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
         Me.BuscardocumentosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +51,9 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,10 +63,11 @@ Partial Class Form1
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1072, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(139, 25)
         Me.ToolStrip1.TabIndex = 13
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -220,6 +221,7 @@ Partial Class Form1
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
@@ -236,29 +238,6 @@ Partial Class Form1
         Me.BuscardocumentosDataGridView.ReadOnly = True
         Me.BuscardocumentosDataGridView.Size = New System.Drawing.Size(1046, 429)
         Me.BuscardocumentosDataGridView.TabIndex = 69
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(729, 88)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(326, 53)
-        Me.BtnBuscar.TabIndex = 70
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'Tipo_de_DocumentoTableAdapter
-        '
-        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 605)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 13)
-        Me.Label3.TabIndex = 71
-        Me.Label3.Text = "DD/MM/YYYY"
         '
         'DataGridViewTextBoxColumn1
         '
@@ -314,11 +293,34 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(729, 88)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(326, 53)
+        Me.BtnBuscar.TabIndex = 70
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'Tipo_de_DocumentoTableAdapter
+        '
+        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(9, 605)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 13)
+        Me.Label3.TabIndex = 71
+        Me.Label3.Text = "DD/MM/YYYY"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1072, 650)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnBuscar)
