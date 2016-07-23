@@ -47,6 +47,7 @@ Partial Class EditarDocumento
         Me.Archivo_AdjuntoTextBox = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         NombreLabel = New System.Windows.Forms.Label()
         AñoLabel = New System.Windows.Forms.Label()
         Archivo_AdjuntoLabel = New System.Windows.Forms.Label()
@@ -154,6 +155,7 @@ Partial Class EditarDocumento
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
@@ -252,12 +254,20 @@ Partial Class EditarDocumento
         Me.TextBox5.Size = New System.Drawing.Size(200, 20)
         Me.TextBox5.TabIndex = 77
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(313, 62)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(204, 20)
+        Me.TextBox2.TabIndex = 79
+        '
         'EditarDocumento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(642, 235)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(NombreLabel)
@@ -305,4 +315,5 @@ Partial Class EditarDocumento
     Friend WithEvents Archivo_AdjuntoTextBox As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

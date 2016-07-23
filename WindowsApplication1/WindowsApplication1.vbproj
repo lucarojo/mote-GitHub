@@ -215,6 +215,9 @@
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="opcionesavanzadas.resx">
+      <DependentUpon>opcionesavanzadas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario Pantalla Principal.resx">
       <DependentUpon>Usuario Pantalla Principal.vb</DependentUpon>
     </EmbeddedResource>
