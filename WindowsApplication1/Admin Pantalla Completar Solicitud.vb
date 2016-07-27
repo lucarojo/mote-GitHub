@@ -14,11 +14,11 @@
         TextBox2.Text = Jalar
         SolicitudID.Text = Jalar
         EstadoID.Text = "COM"
-        ' Try
-        Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, TextBox2.Text)
-        'Catch ex As System.Exception
-        'System.Windows.Forms.MessageBox.Show(ex.Message)
-        'End Try
+        Try
+            Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, Jalar)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Sub DocumentosDeSolicitudDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DocumentosDeSolicitudDataGridView.CellContentClick
@@ -49,4 +49,7 @@
         'MsgBox("Documento salvado con éxito en" & destino, MsgBoxStyle.OkOnly, "SISTEMA")
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
 End Class

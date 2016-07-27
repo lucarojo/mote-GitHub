@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,22 +20,37 @@ Partial Class Form2
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DataSet1 = New WindowsApplication1.DataSet1()
+        Me.SolicitudesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SolicitudesTableAdapter = New WindowsApplication1.DataSet1TableAdapters.SolicitudesTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.SolicitudIDTextBox = New System.Windows.Forms.TextBox()
+        Me.Fecha_CreacionDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Nombre_SolicitanteTextBox = New System.Windows.Forms.TextBox()
+        Me.EstadoIDTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.SpDocumentosySolicitudesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SpDocumentosySolicitudesTableAdapter = New WindowsApplication1.DataSet1TableAdapters.spDocumentosySolicitudesTableAdapter()
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SolicitudesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpDocumentosySolicitudesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
@@ -72,13 +87,6 @@ Partial Class Form2
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Nombre Completo"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(150, 345)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(233, 20)
-        Me.TextBox1.TabIndex = 13
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -88,13 +96,6 @@ Partial Class Form2
         Me.Label3.Size = New System.Drawing.Size(123, 15)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Numero de Identidad"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(150, 377)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(233, 20)
-        Me.TextBox2.TabIndex = 15
         '
         'Label6
         '
@@ -119,16 +120,110 @@ Partial Class Form2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Atención"
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SolicitudesBindingSource
+        '
+        Me.SolicitudesBindingSource.DataMember = "Solicitudes"
+        Me.SolicitudesBindingSource.DataSource = Me.DataSet1
+        '
+        'SolicitudesTableAdapter
+        '
+        Me.SolicitudesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Me.SolicitudesTableAdapter
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'SolicitudIDTextBox
+        '
+        Me.SolicitudIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "SolicitudID", True))
+        Me.SolicitudIDTextBox.Location = New System.Drawing.Point(150, 405)
+        Me.SolicitudIDTextBox.Name = "SolicitudIDTextBox"
+        Me.SolicitudIDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SolicitudIDTextBox.TabIndex = 23
+        '
+        'Fecha_CreacionDateTimePicker
+        '
+        Me.Fecha_CreacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.SolicitudesBindingSource, "Fecha_Creacion", True))
+        Me.Fecha_CreacionDateTimePicker.Enabled = False
+        Me.Fecha_CreacionDateTimePicker.Location = New System.Drawing.Point(150, 405)
+        Me.Fecha_CreacionDateTimePicker.Name = "Fecha_CreacionDateTimePicker"
+        Me.Fecha_CreacionDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.Fecha_CreacionDateTimePicker.TabIndex = 25
+        '
+        'Nombre_SolicitanteTextBox
+        '
+        Me.Nombre_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "Nombre_Solicitante", True))
+        Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(150, 340)
+        Me.Nombre_SolicitanteTextBox.Name = "Nombre_SolicitanteTextBox"
+        Me.Nombre_SolicitanteTextBox.Size = New System.Drawing.Size(233, 20)
+        Me.Nombre_SolicitanteTextBox.TabIndex = 26
+        '
+        'EstadoIDTextBox
+        '
+        Me.EstadoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "EstadoID", True))
+        Me.EstadoIDTextBox.Location = New System.Drawing.Point(150, 405)
+        Me.EstadoIDTextBox.Name = "EstadoIDTextBox"
+        Me.EstadoIDTextBox.Size = New System.Drawing.Size(60, 20)
+        Me.EstadoIDTextBox.TabIndex = 28
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(21, 410)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(41, 15)
+        Me.Label4.TabIndex = 29
+        Me.Label4.Text = "Fecha"
+        '
+        'SpDocumentosySolicitudesBindingSource
+        '
+        Me.SpDocumentosySolicitudesBindingSource.DataSource = Me.DataSet1
+        Me.SpDocumentosySolicitudesBindingSource.Position = 0
+        '
+        'SpDocumentosySolicitudesTableAdapter
+        '
+        Me.SpDocumentosySolicitudesTableAdapter.ClearBeforeFill = True
+        '
+        'Numero_Cuenta_SolicitanteMaskedTextBox
+        '
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "Numero_Cuenta_Solicitante", True))
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Location = New System.Drawing.Point(150, 376)
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Mask = "0000000000000"
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Name = "Numero_Cuenta_SolicitanteMaskedTextBox"
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Size = New System.Drawing.Size(162, 20)
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.TabIndex = 30
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(746, 494)
+        Me.ClientSize = New System.Drawing.Size(754, 476)
+        Me.Controls.Add(Me.Fecha_CreacionDateTimePicker)
+        Me.Controls.Add(Me.SolicitudIDTextBox)
+        Me.Controls.Add(Me.Numero_Cuenta_SolicitanteMaskedTextBox)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.EstadoIDTextBox)
+        Me.Controls.Add(Me.Nombre_SolicitanteTextBox)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -139,6 +234,9 @@ Partial Class Form2
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Confirmación"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SolicitudesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpDocumentosySolicitudesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -152,4 +250,16 @@ Partial Class Form2
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents SolicitudesBindingSource As BindingSource
+    Friend WithEvents SolicitudesTableAdapter As DataSet1TableAdapters.SolicitudesTableAdapter
+    Friend WithEvents TableAdapterManager As DataSet1TableAdapters.TableAdapterManager
+    Friend WithEvents SolicitudIDTextBox As TextBox
+    Friend WithEvents Fecha_CreacionDateTimePicker As DateTimePicker
+    Friend WithEvents Nombre_SolicitanteTextBox As TextBox
+    Friend WithEvents EstadoIDTextBox As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents SpDocumentosySolicitudesBindingSource As BindingSource
+    Friend WithEvents SpDocumentosySolicitudesTableAdapter As DataSet1TableAdapters.spDocumentosySolicitudesTableAdapter
+    Friend WithEvents Numero_Cuenta_SolicitanteMaskedTextBox As MaskedTextBox
 End Class

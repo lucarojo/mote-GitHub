@@ -98,6 +98,5 @@ Public Class Form1
             obj.Button1.Show()
             obj.Show()
         End If
-
     End Sub
 End Class
