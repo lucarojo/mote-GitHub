@@ -48,9 +48,9 @@ Partial Class agregarcarreras
         Me.CarreraIDTextBox = New System.Windows.Forms.TextBox()
         Me.CarreraTextBox = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TipoGradoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TipoDeDocumentoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TipoGradoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tipo_GradoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_GradoTableAdapter()
         CarreraIDLabel = New System.Windows.Forms.Label()
         CarreraLabel = New System.Windows.Forms.Label()
@@ -59,9 +59,9 @@ Partial Class agregarcarreras
         CType(Me.CarrerasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CarrerasBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CarrerasBindingNavigator.SuspendLayout()
+        CType(Me.TipoGradoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TipoGradoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CarreraIDLabel
@@ -111,8 +111,10 @@ Partial Class agregarcarreras
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CarrerasTableAdapter = Me.CarrerasTableAdapter
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Me.Tipo_de_DocumentoTableAdapter
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -252,12 +254,18 @@ Partial Class agregarcarreras
         Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CarrerasBindingSource, "TipoGradoID", True))
         Me.ComboBox1.DataSource = Me.TipoGradoBindingSource
         Me.ComboBox1.DisplayMember = "TipoGrado"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(131, 93)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 6
         Me.ComboBox1.ValueMember = "TipoGradoID"
+        '
+        'TipoGradoBindingSource
+        '
+        Me.TipoGradoBindingSource.DataMember = "Tipo Grado"
+        Me.TipoGradoBindingSource.DataSource = Me.DataSet1
         '
         'TipoDeDocumentoBindingSource
         '
@@ -268,11 +276,6 @@ Partial Class agregarcarreras
         '
         Me.DataSet1BindingSource.DataSource = Me.DataSet1
         Me.DataSet1BindingSource.Position = 0
-        '
-        'TipoGradoBindingSource
-        '
-        Me.TipoGradoBindingSource.DataMember = "Tipo Grado"
-        Me.TipoGradoBindingSource.DataSource = Me.DataSet1
         '
         'Tipo_GradoTableAdapter
         '
@@ -291,16 +294,17 @@ Partial Class agregarcarreras
         Me.Controls.Add(Me.CarreraTextBox)
         Me.Controls.Add(TipoGradoIDLabel)
         Me.Controls.Add(Me.CarrerasBindingNavigator)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "agregarcarreras"
-        Me.Text = "agregarcarreras"
+        Me.Text = "Mantenimiento de Carreras"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CarrerasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CarrerasBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CarrerasBindingNavigator.ResumeLayout(False)
         Me.CarrerasBindingNavigator.PerformLayout()
+        CType(Me.TipoGradoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TipoGradoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

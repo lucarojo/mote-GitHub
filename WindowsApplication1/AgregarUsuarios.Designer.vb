@@ -111,10 +111,13 @@ Partial Class AgregarUsuarios
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Me.UsuariosTableAdapter
         '
@@ -329,9 +332,10 @@ Partial Class AgregarUsuarios
         Me.Controls.Add(ContraseñaLabel)
         Me.Controls.Add(Me.ContraseñaTextBox)
         Me.Controls.Add(Me.UsuariosBindingNavigator)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AgregarUsuarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Agregar Usuarios"
+        Me.Text = "Mantenimiento de Usuarios"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuariosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

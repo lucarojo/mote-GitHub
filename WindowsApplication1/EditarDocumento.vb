@@ -1,4 +1,6 @@
 ﻿Public Class EditarDocumento
+    Dim si As Integer = 1
+    Dim no As Integer = 0
     Dim temporal As String
     Private Sub EditarDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet1.Tipo_de_Documento' table. You can move, or remove it, as needed.
@@ -9,7 +11,7 @@
         TextBox5.Text = " "
 
         Try
-            Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(CType(AñoDateTimePicker.Text, Date)), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue)
+            Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(AñoDateTimePicker.Text), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue, no)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -20,18 +22,18 @@
         Me.Close()
     End Sub
 
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
-        Try
-            Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(CType(AñoDateTimePicker.Text, Date)), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+    'Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
+    '    Try
+    '        Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(CType(AñoDateTimePicker.Text, Date)), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue, si)
+    '    Catch ex As System.Exception
+    '        System.Windows.Forms.MessageBox.Show(ex.Message)
+    '    End Try
 
-    End Sub
+    'End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(CType(AñoDateTimePicker.Text, Date)), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue)
+            Me.ModificarDocumentoTableAdapter.Fill(Me.DataSet1.modificarDocumento, Jalar, NombreTextBox.Text, New System.Nullable(Of Date)(CType(AñoDateTimePicker.Text, Date)), Archivo_AdjuntoTextBox.Text, ComboBox2.SelectedValue, ComboBox1.SelectedValue, si)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try

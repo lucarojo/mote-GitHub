@@ -82,6 +82,6 @@
     End Sub
 
     Private Sub OpcionesAvanzadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpcionesAvanzadasToolStripMenuItem.Click
-        OpcionesAvanzadas.Show()
+        opcionesavanzadas.Show()
     End Sub
 End Class

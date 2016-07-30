@@ -51,6 +51,9 @@ Partial Class Form2
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
@@ -60,6 +63,7 @@ Partial Class Form2
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(480, 425)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(220, 32)
@@ -69,6 +73,7 @@ Partial Class Form2
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(21, 313)
@@ -79,6 +84,7 @@ Partial Class Form2
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(21, 345)
@@ -89,6 +95,7 @@ Partial Class Form2
         '
         'Label3
         '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(21, 377)
@@ -99,6 +106,7 @@ Partial Class Form2
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
@@ -111,6 +119,7 @@ Partial Class Form2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Red
         Me.GroupBox1.Location = New System.Drawing.Point(435, 326)
@@ -143,6 +152,7 @@ Partial Class Form2
         Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Me.SolicitudesTableAdapter
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -151,6 +161,7 @@ Partial Class Form2
         '
         'SolicitudIDTextBox
         '
+        Me.SolicitudIDTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.SolicitudIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "SolicitudID", True))
         Me.SolicitudIDTextBox.Location = New System.Drawing.Point(150, 405)
         Me.SolicitudIDTextBox.Name = "SolicitudIDTextBox"
@@ -159,6 +170,7 @@ Partial Class Form2
         '
         'Fecha_CreacionDateTimePicker
         '
+        Me.Fecha_CreacionDateTimePicker.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Fecha_CreacionDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.SolicitudesBindingSource, "Fecha_Creacion", True))
         Me.Fecha_CreacionDateTimePicker.Enabled = False
         Me.Fecha_CreacionDateTimePicker.Location = New System.Drawing.Point(150, 405)
@@ -168,6 +180,7 @@ Partial Class Form2
         '
         'Nombre_SolicitanteTextBox
         '
+        Me.Nombre_SolicitanteTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Nombre_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "Nombre_Solicitante", True))
         Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(150, 340)
         Me.Nombre_SolicitanteTextBox.Name = "Nombre_SolicitanteTextBox"
@@ -176,6 +189,7 @@ Partial Class Form2
         '
         'EstadoIDTextBox
         '
+        Me.EstadoIDTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.EstadoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "EstadoID", True))
         Me.EstadoIDTextBox.Location = New System.Drawing.Point(150, 405)
         Me.EstadoIDTextBox.Name = "EstadoIDTextBox"
@@ -184,6 +198,7 @@ Partial Class Form2
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(21, 410)
@@ -203,9 +218,10 @@ Partial Class Form2
         '
         'Numero_Cuenta_SolicitanteMaskedTextBox
         '
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Numero_Cuenta_SolicitanteMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SolicitudesBindingSource, "Numero_Cuenta_Solicitante", True))
         Me.Numero_Cuenta_SolicitanteMaskedTextBox.Location = New System.Drawing.Point(150, 376)
-        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Mask = "0000000000000"
+        Me.Numero_Cuenta_SolicitanteMaskedTextBox.Mask = "0000-0000-00000"
         Me.Numero_Cuenta_SolicitanteMaskedTextBox.Name = "Numero_Cuenta_SolicitanteMaskedTextBox"
         Me.Numero_Cuenta_SolicitanteMaskedTextBox.Size = New System.Drawing.Size(162, 20)
         Me.Numero_Cuenta_SolicitanteMaskedTextBox.TabIndex = 30
@@ -229,7 +245,7 @@ Partial Class Form2
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Confirmación"

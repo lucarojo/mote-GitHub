@@ -31,7 +31,6 @@ Partial Class Form5
         Dim AñoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -156,15 +155,6 @@ Partial Class Form5
         Me.Button3.TabIndex = 34
         Me.Button3.Text = "Cancelar"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(464, 53)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(214, 77)
-        Me.Button2.TabIndex = 33
-        Me.Button2.Text = "Crear Nuevo"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -357,8 +347,10 @@ Partial Class Form5
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Me.DocumentosTableAdapter
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -421,6 +413,7 @@ Partial Class Form5
         'AñoDateTimePicker
         '
         Me.AñoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.DocumentosBindingSource, "Año", True))
+        Me.AñoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.AñoDateTimePicker.Location = New System.Drawing.Point(116, 153)
         Me.AñoDateTimePicker.Name = "AñoDateTimePicker"
         Me.AñoDateTimePicker.Size = New System.Drawing.Size(200, 20)
@@ -491,19 +484,19 @@ Partial Class Form5
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.UsuariosToolStripMenuItem.Text = "Alumnos"
         '
         'CarrerasToolStripMenuItem
         '
         Me.CarrerasToolStripMenuItem.Name = "CarrerasToolStripMenuItem"
-        Me.CarrerasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CarrerasToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.CarrerasToolStripMenuItem.Text = "Carreras"
         '
         'UsuariosToolStripMenuItem1
         '
         Me.UsuariosToolStripMenuItem1.Name = "UsuariosToolStripMenuItem1"
-        Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.UsuariosToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.UsuariosToolStripMenuItem1.Text = "Usuarios"
         '
         'OpcionesAvanzadasToolStripMenuItem
@@ -548,10 +541,10 @@ Partial Class Form5
         Me.Controls.Add(TipoDocIDLabel)
         Me.Controls.Add(Me.DocumentosBindingNavigator)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox5)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form5"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Documento"
@@ -571,7 +564,6 @@ Partial Class Form5
     End Sub
 
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox5 As TextBox

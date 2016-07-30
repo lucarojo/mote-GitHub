@@ -115,4 +115,12 @@
     Private Sub CarrerasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CarrerasToolStripMenuItem.Click
         agregarcarreras.Show()
     End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        Try
+            Me.BuscardocumentosTableAdapter.Fill(Me.DataSet1.buscardocumentos, TextBox4.Text, TextBox1.Text, TextBox2.Text, TextBox3.Text, ComboBox2.SelectedValue)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class

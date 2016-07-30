@@ -13,6 +13,7 @@
         'Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
         ComboBox1.Text = ""
         ComboBox2.Text = ""
+        AñoDateTimePicker.Value = Today
         Dim rnum As Random
         Dim num As Integer
         rnum = New Random
@@ -26,7 +27,7 @@
         DocumentosBindingSource.AddNew()
         DocumentoIDTextBox.Text = num.ToString
         'AñoTextBox.Text = Today.Date.Year
-        Button2.Enabled = False
+        'Button2.Enabled = False
 
     End Sub
 
@@ -48,22 +49,6 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        'My.Computer.FileSystem.CopyFile(source, "C:\Documentos\" & nombre)
-        DocumentoIDTextBox.Enabled = True
-        NombreTextBox.Enabled = True
-        'AñoTextBox.Enabled = True
-        ComboBox1.Enabled = True
-        ComboBox2.Enabled = True
-        Dim rnum As Random
-        Dim num As Integer
-        rnum = New Random
-        num = rnum.Next(1, 999999999)
-        DocumentosBindingSource.AddNew()
-        DocumentoIDTextBox.Text = num.ToString
-
-
-    End Sub
 
     Private Sub DocumentosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles DocumentosBindingNavigatorSaveItem.Click
         Me.Validate()
@@ -110,7 +95,15 @@
             num = rnum.Next(1, 999999999)
             DocumentosBindingSource.AddNew()
             DocumentoIDTextBox.Text = num.ToString
-            Button2.Enabled = True
+            'DocumentoIDTextBox.Text = ""
+            'NombreTextBox.Text = ""
+            'TextBox5.Text = ""
+            'Archivo_AdjuntoTextBox.Text = ""
+            'ComboBox1.Enabled = False
+            'ComboBox1.Enabled = True
+            'ComboBox2.Enabled = False
+            'ComboBox2.Enabled = True
+            'Button2.Enabled = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

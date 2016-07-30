@@ -7,10 +7,6 @@ Public Class login
     Dim eu As New eusuario
 
 
-    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
         Try
@@ -31,7 +27,7 @@ Public Class login
 
                     'End If
                 Else
-                    MsgBox("Información incorrecta!", MsgBoxStyle.Critical, "SISTEMA")
+                    MsgBox("Información incorrecta!", MsgBoxStyle.Critical, "Sistema")
 
                 End If
 
@@ -48,9 +44,12 @@ Public Class login
         If ProgressBar1.Value = 100 Then
             Timer1.Enabled = False
             Me.Hide()
-            MsgBox("Bienvenido " & txtUsuario.Text, MsgBoxStyle.OkOnly, "SISTEMA")
-
+            MsgBox("Bienvenido " & txtUsuario.Text, MsgBoxStyle.OkOnly, "Sistema")
+            usuarionombre = txtUsuario.Text
             Form4.Show()
+            ProgressBar1.Value = 0
+            txtPassword.Text = ""
+            txtUsuario.Text = ""
             Form1.Hide()
         End If
 
@@ -59,6 +58,9 @@ Public Class login
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
+    End Sub
 
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Refresh()
     End Sub
 End Class

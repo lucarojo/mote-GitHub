@@ -25,8 +25,10 @@ Partial Class AgregarAlumnos
         Me.components = New System.ComponentModel.Container()
         Dim AlumnoIDLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
-        Dim NumeroDeCuentaLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AgregarAlumnos))
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.AlumnosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.AlumnosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -42,25 +44,20 @@ Partial Class AgregarAlumnos
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AlumnosBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.Detalle_CarrerasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlumnoIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
-        Me.NumeroDeCuentaTextBox = New System.Windows.Forms.TextBox()
-        Me.Detalle_CarrerasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Detalle_CarrerasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.CarrerasBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AlumnosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.AlumnosTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.CarrerasTableAdapter = New WindowsApplication1.DataSet1TableAdapters.CarrerasTableAdapter()
         Me.Detalle_CarrerasTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Detalle_CarrerasTableAdapter()
         Me.CarrerasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CarrerasTableAdapter = New WindowsApplication1.DataSet1TableAdapters.CarrerasTableAdapter()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         AlumnoIDLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
-        NumeroDeCuentaLabel = New System.Windows.Forms.Label()
         CType(Me.AlumnosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AlumnosBindingNavigator.SuspendLayout()
         CType(Me.AlumnosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,29 +71,47 @@ Partial Class AgregarAlumnos
         'AlumnoIDLabel
         '
         AlumnoIDLabel.AutoSize = True
-        AlumnoIDLabel.Location = New System.Drawing.Point(12, 36)
+        AlumnoIDLabel.Location = New System.Drawing.Point(21, 55)
         AlumnoIDLabel.Name = "AlumnoIDLabel"
         AlumnoIDLabel.Size = New System.Drawing.Size(59, 13)
-        AlumnoIDLabel.TabIndex = 1
+        AlumnoIDLabel.TabIndex = 13
         AlumnoIDLabel.Text = "Alumno ID:"
         '
         'NombreLabel
         '
         NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 62)
+        NombreLabel.Location = New System.Drawing.Point(21, 81)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(47, 13)
-        NombreLabel.TabIndex = 3
+        NombreLabel.TabIndex = 15
         NombreLabel.Text = "Nombre:"
         '
-        'NumeroDeCuentaLabel
+        'Button1
         '
-        NumeroDeCuentaLabel.AutoSize = True
-        NumeroDeCuentaLabel.Location = New System.Drawing.Point(12, 88)
-        NumeroDeCuentaLabel.Name = "NumeroDeCuentaLabel"
-        NumeroDeCuentaLabel.Size = New System.Drawing.Size(101, 13)
-        NumeroDeCuentaLabel.TabIndex = 5
-        NumeroDeCuentaLabel.Text = "Numero De Cuenta:"
+        Me.Button1.Location = New System.Drawing.Point(95, 135)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 83)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Crear Nuevo"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(387, 272)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(136, 39)
+        Me.Button3.TabIndex = 12
+        Me.Button3.Text = "Salvar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(529, 272)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(136, 39)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'AlumnosBindingNavigator
         '
@@ -104,7 +119,7 @@ Partial Class AgregarAlumnos
         Me.AlumnosBindingNavigator.BindingSource = Me.AlumnosBindingSource
         Me.AlumnosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.AlumnosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.AlumnosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorDeleteItem, Me.AlumnosBindingNavigatorSaveItem, Me.BindingNavigatorAddNewItem})
+        Me.AlumnosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.AlumnosBindingNavigatorSaveItem})
         Me.AlumnosBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.AlumnosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.AlumnosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -112,8 +127,8 @@ Partial Class AgregarAlumnos
         Me.AlumnosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.AlumnosBindingNavigator.Name = "AlumnosBindingNavigator"
         Me.AlumnosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.AlumnosBindingNavigator.Size = New System.Drawing.Size(707, 25)
-        Me.AlumnosBindingNavigator.TabIndex = 0
+        Me.AlumnosBindingNavigator.Size = New System.Drawing.Size(732, 25)
+        Me.AlumnosBindingNavigator.TabIndex = 13
         Me.AlumnosBindingNavigator.Text = "BindingNavigator1"
         '
         'BindingNavigatorAddNewItem
@@ -213,41 +228,33 @@ Partial Class AgregarAlumnos
         '
         'AlumnosBindingNavigatorSaveItem
         '
+        Me.AlumnosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.AlumnosBindingNavigatorSaveItem.Image = CType(resources.GetObject("AlumnosBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.AlumnosBindingNavigatorSaveItem.Name = "AlumnosBindingNavigatorSaveItem"
-        Me.AlumnosBindingNavigatorSaveItem.Size = New System.Drawing.Size(58, 22)
-        Me.AlumnosBindingNavigatorSaveItem.Text = "Salvar"
+        Me.AlumnosBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.AlumnosBindingNavigatorSaveItem.Text = "Save Data"
         Me.AlumnosBindingNavigatorSaveItem.Visible = False
-        '
-        'AlumnoIDTextBox
-        '
-        Me.AlumnoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AlumnosBindingSource, "AlumnoID", True))
-        Me.AlumnoIDTextBox.Location = New System.Drawing.Point(119, 33)
-        Me.AlumnoIDTextBox.Name = "AlumnoIDTextBox"
-        Me.AlumnoIDTextBox.ReadOnly = True
-        Me.AlumnoIDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.AlumnoIDTextBox.TabIndex = 2
-        '
-        'NombreTextBox
-        '
-        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AlumnosBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(119, 59)
-        Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(182, 20)
-        Me.NombreTextBox.TabIndex = 4
-        '
-        'NumeroDeCuentaTextBox
-        '
-        Me.NumeroDeCuentaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AlumnosBindingSource, "NumeroDeCuenta", True))
-        Me.NumeroDeCuentaTextBox.Location = New System.Drawing.Point(119, 85)
-        Me.NumeroDeCuentaTextBox.Name = "NumeroDeCuentaTextBox"
-        Me.NumeroDeCuentaTextBox.Size = New System.Drawing.Size(182, 20)
-        Me.NumeroDeCuentaTextBox.TabIndex = 6
         '
         'Detalle_CarrerasBindingSource
         '
         Me.Detalle_CarrerasBindingSource.DataMember = "FK_Detalle Carreras_Alumnos"
         Me.Detalle_CarrerasBindingSource.DataSource = Me.AlumnosBindingSource
+        '
+        'AlumnoIDTextBox
+        '
+        Me.AlumnoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AlumnosBindingSource, "AlumnoID", True))
+        Me.AlumnoIDTextBox.Location = New System.Drawing.Point(86, 52)
+        Me.AlumnoIDTextBox.Name = "AlumnoIDTextBox"
+        Me.AlumnoIDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.AlumnoIDTextBox.TabIndex = 14
+        '
+        'NombreTextBox
+        '
+        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AlumnosBindingSource, "Nombre", True))
+        Me.NombreTextBox.Location = New System.Drawing.Point(86, 78)
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.Size = New System.Drawing.Size(247, 20)
+        Me.NombreTextBox.TabIndex = 16
         '
         'Detalle_CarrerasDataGridView
         '
@@ -255,10 +262,10 @@ Partial Class AgregarAlumnos
         Me.Detalle_CarrerasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Detalle_CarrerasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1})
         Me.Detalle_CarrerasDataGridView.DataSource = Me.Detalle_CarrerasBindingSource
-        Me.Detalle_CarrerasDataGridView.Location = New System.Drawing.Point(351, 28)
+        Me.Detalle_CarrerasDataGridView.Location = New System.Drawing.Point(365, 46)
         Me.Detalle_CarrerasDataGridView.Name = "Detalle_CarrerasDataGridView"
-        Me.Detalle_CarrerasDataGridView.Size = New System.Drawing.Size(344, 238)
-        Me.Detalle_CarrerasDataGridView.TabIndex = 7
+        Me.Detalle_CarrerasDataGridView.Size = New System.Drawing.Size(345, 220)
+        Me.Detalle_CarrerasDataGridView.TabIndex = 16
         '
         'DataGridViewTextBoxColumn2
         '
@@ -282,9 +289,7 @@ Partial Class AgregarAlumnos
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "AlumnoID"
         Me.DataGridViewTextBoxColumn1.HeaderText = "AlumnoID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn1.Visible = False
-        Me.DataGridViewTextBoxColumn1.Width = 300
         '
         'AlumnosTableAdapter
         '
@@ -294,14 +299,21 @@ Partial Class AgregarAlumnos
         '
         Me.TableAdapterManager.AlumnosTableAdapter = Me.AlumnosTableAdapter
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.CarrerasTableAdapter = Me.CarrerasTableAdapter
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Me.Detalle_CarrerasTableAdapter
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'CarrerasTableAdapter
+        '
+        Me.CarrerasTableAdapter.ClearBeforeFill = True
         '
         'Detalle_CarrerasTableAdapter
         '
@@ -312,57 +324,25 @@ Partial Class AgregarAlumnos
         Me.CarrerasBindingSource.DataMember = "Carreras"
         Me.CarrerasBindingSource.DataSource = Me.DataSet1
         '
-        'CarrerasTableAdapter
-        '
-        Me.CarrerasTableAdapter.ClearBeforeFill = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(70, 147)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 83)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Crear Nuevo"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(387, 272)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(136, 39)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Salvar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(529, 272)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(136, 39)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'AgregarAlumnos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(707, 325)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(732, 332)
         Me.Controls.Add(Me.Detalle_CarrerasDataGridView)
         Me.Controls.Add(AlumnoIDLabel)
         Me.Controls.Add(Me.AlumnoIDTextBox)
         Me.Controls.Add(NombreLabel)
         Me.Controls.Add(Me.NombreTextBox)
-        Me.Controls.Add(NumeroDeCuentaLabel)
-        Me.Controls.Add(Me.NumeroDeCuentaTextBox)
         Me.Controls.Add(Me.AlumnosBindingNavigator)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AgregarAlumnos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AgregarAlumnos"
+        Me.Text = "Mantenimiento de Alumnos"
         CType(Me.AlumnosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AlumnosBindingNavigator.ResumeLayout(False)
         Me.AlumnosBindingNavigator.PerformLayout()
@@ -376,7 +356,9 @@ Partial Class AgregarAlumnos
         Me.PerformLayout()
 
     End Sub
-
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
     Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents AlumnosBindingSource As BindingSource
     Friend WithEvents AlumnosTableAdapter As DataSet1TableAdapters.AlumnosTableAdapter
@@ -394,18 +376,14 @@ Partial Class AgregarAlumnos
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents AlumnosBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents Detalle_CarrerasTableAdapter As DataSet1TableAdapters.Detalle_CarrerasTableAdapter
+    Friend WithEvents Detalle_CarrerasBindingSource As BindingSource
+    Friend WithEvents CarrerasTableAdapter As DataSet1TableAdapters.CarrerasTableAdapter
+    Friend WithEvents CarrerasBindingSource As BindingSource
     Friend WithEvents AlumnoIDTextBox As TextBox
     Friend WithEvents NombreTextBox As TextBox
-    Friend WithEvents NumeroDeCuentaTextBox As TextBox
-    Friend WithEvents Detalle_CarrerasBindingSource As BindingSource
-    Friend WithEvents Detalle_CarrerasTableAdapter As DataSet1TableAdapters.Detalle_CarrerasTableAdapter
     Friend WithEvents Detalle_CarrerasDataGridView As DataGridView
-    Friend WithEvents CarrerasBindingSource As BindingSource
-    Friend WithEvents CarrerasTableAdapter As DataSet1TableAdapters.CarrerasTableAdapter
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewComboBoxColumn
     Friend WithEvents CarrerasBindingSource1 As BindingSource
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
 End Class

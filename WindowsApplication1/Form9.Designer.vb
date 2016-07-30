@@ -23,6 +23,7 @@ Partial Class Form9
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form9))
         Me.colNombre_Solicitante = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNumero_Cuenta_Solicitante = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -37,6 +38,7 @@ Partial Class Form9
         Me.colNumero_Cuenta_Solicitante1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFecha_Creacion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -81,20 +83,28 @@ Partial Class Form9
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
         'ProcedimientoReporteGridControl
         '
+        Me.ProcedimientoReporteGridControl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProcedimientoReporteGridControl.DataSource = Me.ProcedimientoReporteBindingSource1
-        Me.ProcedimientoReporteGridControl.Location = New System.Drawing.Point(12, 120)
+        GridLevelNode1.RelationName = "Level1"
+        Me.ProcedimientoReporteGridControl.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        Me.ProcedimientoReporteGridControl.Location = New System.Drawing.Point(15, 67)
         Me.ProcedimientoReporteGridControl.MainView = Me.GridViewReporte
         Me.ProcedimientoReporteGridControl.Name = "ProcedimientoReporteGridControl"
-        Me.ProcedimientoReporteGridControl.Size = New System.Drawing.Size(894, 220)
+        Me.ProcedimientoReporteGridControl.Size = New System.Drawing.Size(894, 374)
         Me.ProcedimientoReporteGridControl.TabIndex = 9
         Me.ProcedimientoReporteGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewReporte})
         '
@@ -105,38 +115,53 @@ Partial Class Form9
         '
         'GridViewReporte
         '
-        Me.GridViewReporte.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colNombre_Solicitante1, Me.colNumero_Cuenta_Solicitante1, Me.colNombre, Me.colFecha_Creacion})
+        Me.GridViewReporte.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colNombre_Solicitante1, Me.colNumero_Cuenta_Solicitante1, Me.colNombre, Me.colFecha_Creacion, Me.GridColumn1})
         Me.GridViewReporte.GridControl = Me.ProcedimientoReporteGridControl
         Me.GridViewReporte.Name = "GridViewReporte"
         Me.GridViewReporte.OptionsPrint.RtfPageHeader = resources.GetString("GridViewReporte.OptionsPrint.RtfPageHeader")
         '
         'colNombre_Solicitante1
         '
+        Me.colNombre_Solicitante1.Caption = "Nombre del Solicitante"
         Me.colNombre_Solicitante1.FieldName = "Nombre_Solicitante"
         Me.colNombre_Solicitante1.Name = "colNombre_Solicitante1"
         Me.colNombre_Solicitante1.Visible = True
         Me.colNombre_Solicitante1.VisibleIndex = 0
+        Me.colNombre_Solicitante1.Width = 175
         '
         'colNumero_Cuenta_Solicitante1
         '
+        Me.colNumero_Cuenta_Solicitante1.Caption = "Numero de Cuenta del Solicitante"
         Me.colNumero_Cuenta_Solicitante1.FieldName = "Numero_Cuenta_Solicitante"
         Me.colNumero_Cuenta_Solicitante1.Name = "colNumero_Cuenta_Solicitante1"
         Me.colNumero_Cuenta_Solicitante1.Visible = True
         Me.colNumero_Cuenta_Solicitante1.VisibleIndex = 1
+        Me.colNumero_Cuenta_Solicitante1.Width = 175
         '
         'colNombre
         '
+        Me.colNombre.Caption = "Nombre del Documento Solicitado"
         Me.colNombre.FieldName = "Nombre"
         Me.colNombre.Name = "colNombre"
         Me.colNombre.Visible = True
         Me.colNombre.VisibleIndex = 2
+        Me.colNombre.Width = 300
         '
         'colFecha_Creacion
         '
+        Me.colFecha_Creacion.Caption = "Fecha de Creacion"
         Me.colFecha_Creacion.FieldName = "Fecha_Creacion"
         Me.colFecha_Creacion.Name = "colFecha_Creacion"
         Me.colFecha_Creacion.Visible = True
         Me.colFecha_Creacion.VisibleIndex = 3
+        Me.colFecha_Creacion.Width = 112
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 4
+        Me.GridColumn1.Width = 114
         '
         'DateTimePicker1
         '
@@ -154,6 +179,7 @@ Partial Class Form9
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(495, 9)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(196, 37)
@@ -181,6 +207,7 @@ Partial Class Form9
         '
         'Button2
         '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Location = New System.Drawing.Point(721, 10)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(160, 36)
@@ -231,4 +258,5 @@ Partial Class Form9
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

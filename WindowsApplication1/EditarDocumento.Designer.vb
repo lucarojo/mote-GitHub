@@ -151,8 +151,10 @@ Partial Class EditarDocumento
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -223,6 +225,7 @@ Partial Class EditarDocumento
         'AñoDateTimePicker
         '
         Me.AñoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ModificarDocumentoBindingSource, "Año", True))
+        Me.AñoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.AñoDateTimePicker.Location = New System.Drawing.Point(115, 122)
         Me.AñoDateTimePicker.Name = "AñoDateTimePicker"
         Me.AñoDateTimePicker.Size = New System.Drawing.Size(200, 20)
@@ -284,9 +287,10 @@ Partial Class EditarDocumento
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "EditarDocumento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "EditarDocumento"
+        Me.Text = "Editar Documento"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ModificarDocumentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

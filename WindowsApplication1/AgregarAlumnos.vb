@@ -1,5 +1,5 @@
 ﻿Public Class AgregarAlumnos
-    Private Sub AlumnosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles AlumnosBindingNavigatorSaveItem.Click
+    Private Sub AlumnosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.AlumnosBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.DataSet1)
@@ -26,9 +26,14 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Validate()
-        Me.AlumnosBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+        Try
+            Me.Validate()
+            Me.AlumnosBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -40,5 +45,20 @@
         '    MsgBox(ex.Message)
         'End Try
         Me.Close()
+    End Sub
+
+    Private Sub AlumnosBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs) Handles AlumnosBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.AlumnosBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DataSet1)
+
+    End Sub
+
+    Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
+
+    End Sub
+
+    Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMovePreviousItem.Click
+
     End Sub
 End Class

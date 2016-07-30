@@ -44,15 +44,15 @@ Partial Class Form1
         Me.BuscardocumentosTableAdapter = New WindowsApplication1.DataSet1TableAdapters.buscardocumentosTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
         Me.BuscardocumentosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.Tipo_de_DocumentoTableAdapter = New WindowsApplication1.DataSet1TableAdapters.Tipo_de_DocumentoTableAdapter()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,6 +147,7 @@ Partial Class Form1
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(767, 584)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(293, 54)
@@ -216,8 +217,10 @@ Partial Class Form1
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -226,6 +229,9 @@ Partial Class Form1
         '
         'BuscardocumentosDataGridView
         '
+        Me.BuscardocumentosDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BuscardocumentosDataGridView.AutoGenerateColumns = False
         Me.BuscardocumentosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BuscardocumentosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
@@ -234,29 +240,6 @@ Partial Class Form1
         Me.BuscardocumentosDataGridView.Name = "BuscardocumentosDataGridView"
         Me.BuscardocumentosDataGridView.Size = New System.Drawing.Size(1046, 429)
         Me.BuscardocumentosDataGridView.TabIndex = 69
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Location = New System.Drawing.Point(729, 88)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(326, 53)
-        Me.BtnBuscar.TabIndex = 70
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'Tipo_de_DocumentoTableAdapter
-        '
-        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 605)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 13)
-        Me.Label3.TabIndex = 71
-        Me.Label3.Text = "DD/MM/YYYY"
         '
         'DataGridViewTextBoxColumn1
         '
@@ -299,6 +282,31 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "Tipo de Documento"
         Me.DataGridViewTextBoxColumn6.HeaderText = "Tipo de Documento"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscar.Location = New System.Drawing.Point(729, 88)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(326, 53)
+        Me.BtnBuscar.TabIndex = 70
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'Tipo_de_DocumentoTableAdapter
+        '
+        Me.Tipo_de_DocumentoTableAdapter.ClearBeforeFill = True
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(29, 605)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 13)
+        Me.Label3.TabIndex = 71
+        Me.Label3.Text = "DD/MM/YYYY"
         '
         'Form1
         '

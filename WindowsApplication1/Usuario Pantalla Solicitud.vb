@@ -3,6 +3,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             If Nombre_SolicitanteTextBox.Text <> Nothing And Numero_Cuenta_SolicitanteMaskedTextBox.Text <> Nothing Then
+                Fecha_CreacionDateTimePicker.Value = Now
                 Me.Validate()
                 Me.SolicitudesBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.DataSet1)
@@ -17,7 +18,7 @@
                         System.Windows.Forms.MessageBox.Show(ex.Message)
                     End Try
 
-                    MsgBox(codigo)
+                    ' MsgBox(codigo)
                 Next
                 'Form1.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet1.Tipo_de_Documento)
                 'Try
@@ -57,7 +58,7 @@
         num = rnum.Next(1, 999999999)
         SolicitudIDTextBox.Text = num.ToString
         solicitudid = num.ToString
-        Fecha_CreacionDateTimePicker.Value = Today
+        ' Fecha_CreacionDateTimePicker.Value = Now
 
     End Sub
 

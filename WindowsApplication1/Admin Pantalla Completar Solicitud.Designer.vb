@@ -33,8 +33,15 @@ Partial Class Form7
         Me.DataSet1 = New WindowsApplication1.DataSet1()
         Me.Numero_Cuenta_SolicitanteTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentosDeSolicitudDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.EstadoID = New System.Windows.Forms.TextBox()
+        Me.SolicitudID = New System.Windows.Forms.TextBox()
+        Me.UpdateEstadoEnSolicitudBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DocumentosDeSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.UpdateEstadoEnSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter()
         Me.Archivo_Adjunto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descargar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,13 +50,6 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.EstadoID = New System.Windows.Forms.TextBox()
-        Me.SolicitudID = New System.Windows.Forms.TextBox()
-        Me.UpdateEstadoEnSolicitudBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DocumentosDeSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
-        Me.UpdateEstadoEnSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter()
         Nombre_SolicitanteLabel = New System.Windows.Forms.Label()
         Numero_Cuenta_SolicitanteLabel = New System.Windows.Forms.Label()
         CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,7 @@ Partial Class Form7
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(677, 404)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(164, 38)
@@ -132,9 +133,12 @@ Partial Class Form7
         '
         Me.DocumentosDeSolicitudDataGridView.AllowUserToAddRows = False
         Me.DocumentosDeSolicitudDataGridView.AllowUserToDeleteRows = False
+        Me.DocumentosDeSolicitudDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DocumentosDeSolicitudDataGridView.AutoGenerateColumns = False
         Me.DocumentosDeSolicitudDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DocumentosDeSolicitudDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Archivo_Adjunto, Me.Descargar, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.DocumentosDeSolicitudDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Archivo_Adjunto, Me.DataGridViewTextBoxColumn1, Me.Descargar, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.DocumentosDeSolicitudDataGridView.DataSource = Me.DocumentosDeSolicitudBindingSource
         Me.DocumentosDeSolicitudDataGridView.Location = New System.Drawing.Point(12, 69)
         Me.DocumentosDeSolicitudDataGridView.Name = "DocumentosDeSolicitudDataGridView"
@@ -142,12 +146,61 @@ Partial Class Form7
         Me.DocumentosDeSolicitudDataGridView.Size = New System.Drawing.Size(1016, 318)
         Me.DocumentosDeSolicitudDataGridView.TabIndex = 53
         '
-        'DataGridViewTextBoxColumn1
+        'Button2
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "SolicitudID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "SolicitudID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Location = New System.Drawing.Point(847, 404)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(164, 38)
+        Me.Button2.TabIndex = 57
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'EstadoID
+        '
+        Me.EstadoID.Location = New System.Drawing.Point(15, 430)
+        Me.EstadoID.Name = "EstadoID"
+        Me.EstadoID.Size = New System.Drawing.Size(100, 20)
+        Me.EstadoID.TabIndex = 62
+        Me.EstadoID.Visible = False
+        '
+        'SolicitudID
+        '
+        Me.SolicitudID.Location = New System.Drawing.Point(15, 404)
+        Me.SolicitudID.Name = "SolicitudID"
+        Me.SolicitudID.Size = New System.Drawing.Size(100, 20)
+        Me.SolicitudID.TabIndex = 63
+        Me.SolicitudID.Visible = False
+        '
+        'UpdateEstadoEnSolicitudBindingSource
+        '
+        Me.UpdateEstadoEnSolicitudBindingSource.DataMember = "updateEstadoEnSolicitud"
+        Me.UpdateEstadoEnSolicitudBindingSource.DataSource = Me.DataSet1
+        '
+        'DocumentosDeSolicitudTableAdapter
+        '
+        Me.DocumentosDeSolicitudTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'UpdateEstadoEnSolicitudTableAdapter
+        '
+        Me.UpdateEstadoEnSolicitudTableAdapter.ClearBeforeFill = True
         '
         'Archivo_Adjunto
         '
@@ -155,6 +208,14 @@ Partial Class Form7
         Me.Archivo_Adjunto.HeaderText = "Archivo_Adjunto"
         Me.Archivo_Adjunto.Name = "Archivo_Adjunto"
         Me.Archivo_Adjunto.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "SolicitudID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "SolicitudID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
         '
         'Descargar
         '
@@ -220,60 +281,6 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
         Me.DataGridViewTextBoxColumn8.Visible = False
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(847, 404)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(164, 38)
-        Me.Button2.TabIndex = 57
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'EstadoID
-        '
-        Me.EstadoID.Location = New System.Drawing.Point(15, 430)
-        Me.EstadoID.Name = "EstadoID"
-        Me.EstadoID.Size = New System.Drawing.Size(100, 20)
-        Me.EstadoID.TabIndex = 62
-        Me.EstadoID.Visible = False
-        '
-        'SolicitudID
-        '
-        Me.SolicitudID.Location = New System.Drawing.Point(15, 404)
-        Me.SolicitudID.Name = "SolicitudID"
-        Me.SolicitudID.Size = New System.Drawing.Size(100, 20)
-        Me.SolicitudID.TabIndex = 63
-        Me.SolicitudID.Visible = False
-        '
-        'UpdateEstadoEnSolicitudBindingSource
-        '
-        Me.UpdateEstadoEnSolicitudBindingSource.DataMember = "updateEstadoEnSolicitud"
-        Me.UpdateEstadoEnSolicitudBindingSource.DataSource = Me.DataSet1
-        '
-        'DocumentosDeSolicitudTableAdapter
-        '
-        Me.DocumentosDeSolicitudTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
-        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
-        Me.TableAdapterManager.EstadoTableAdapter = Nothing
-        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
-        '
-        'UpdateEstadoEnSolicitudTableAdapter
-        '
-        Me.UpdateEstadoEnSolicitudTableAdapter.ClearBeforeFill = True
-        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,8 +325,8 @@ Partial Class Form7
     Friend WithEvents UpdateEstadoEnSolicitudTableAdapter As DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter
     Friend WithEvents EstadoID As TextBox
     Friend WithEvents SolicitudID As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Archivo_Adjunto As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Descargar As DataGridViewButtonColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn

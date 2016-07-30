@@ -74,9 +74,13 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim selectedRows As List(Of DataGridViewRow) = (From row In BuscardocumentosDataGridView.Rows.Cast(Of DataGridViewRow)()
                                                         Where Convert.ToBoolean(row.Cells("checkBoxColumn").Value) = True).ToList
+
+
         If MessageBox.Show(String.Format("Usted Eligio {0} filas,Desea Continuar?", selectedRows.Count), "Confirmation", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            MessageBox.Show("Selectedrow->" + selectedRows.Count.ToString)
+            'MessageBox.Show("Selectedrow->" + selectedRows.Count.ToString)
             Dim obj As Form2 = New Form2
+
+
 
             For Each column As DataGridViewColumn In BuscardocumentosDataGridView.Columns
                 obj.DataGridView1.Columns.Add(CType(column.Clone(), DataGridViewColumn))
@@ -96,7 +100,21 @@ Public Class Form1
                 End If
             Next
             obj.Button1.Show()
-            obj.Show()
+
+
+            If selectedRows.Count <> 0 Then
+                obj.Show()
+            Else
+                MsgBox("Debe seleccionar una monografía", MsgBoxStyle.Critical, "Sistema")
+            End If
         End If
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        Try
+            Me.BuscardocumentosTableAdapter.Fill(Me.DataSet1.buscardocumentos, TextBox4.Text, TextBox1.Text, TextBox2.Text, TextBox3.Text, ComboBox2.SelectedValue)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

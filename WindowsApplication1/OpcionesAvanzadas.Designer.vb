@@ -26,6 +26,7 @@ Partial Class opcionesavanzadas
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -33,9 +34,9 @@ Partial Class opcionesavanzadas
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(13, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.Size = New System.Drawing.Size(87, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Server"
+        Me.Label1.Text = "Ruta de Servidor"
         '
         'TextBox1
         '
@@ -55,25 +56,38 @@ Partial Class opcionesavanzadas
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(324, 104)
+        Me.Button2.Location = New System.Drawing.Point(386, 115)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 31)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Ok"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(13, 78)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(354, 20)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "En esta ruta estaran los documentos agregados."
+        '
         'opcionesavanzadas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(445, 147)
+        Me.ClientSize = New System.Drawing.Size(473, 158)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "opcionesavanzadas"
-        Me.Text = "opcionesavanzadas"
+        Me.Text = "Opciones Avanzadas"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -83,4 +97,5 @@ Partial Class opcionesavanzadas
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label2 As Label
 End Class

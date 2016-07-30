@@ -108,6 +108,7 @@ Partial Class Form3
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(758, 89)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(293, 54)
@@ -182,6 +183,9 @@ Partial Class Form3
         '
         Me.BuscardocumentosDataGridView.AllowUserToAddRows = False
         Me.BuscardocumentosDataGridView.AllowUserToDeleteRows = False
+        Me.BuscardocumentosDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BuscardocumentosDataGridView.AutoGenerateColumns = False
         Me.BuscardocumentosDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.BuscardocumentosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -259,8 +263,10 @@ Partial Class Form3
         Me.TableAdapterManager.CarrerasTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.DocumentosTableAdapter = Nothing
         Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
         Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
@@ -305,7 +311,7 @@ Partial Class Form3
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton6, Me.ToolStripButton7, Me.ToolStripDropDownButton1, Me.ToolStripDropDownButton2, Me.ToolStripButton8})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(530, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(499, 25)
         Me.ToolStrip2.TabIndex = 56
         Me.ToolStrip2.Text = "ToolStrip2"
         '

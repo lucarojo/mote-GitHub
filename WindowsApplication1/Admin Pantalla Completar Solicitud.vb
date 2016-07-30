@@ -1,8 +1,9 @@
 ﻿Public Class Form7
-
+    Dim varsolicitudid As String
+    Dim varestadoid As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            Me.UpdateEstadoEnSolicitudTableAdapter.Fill(Me.DataSet1.updateEstadoEnSolicitud, SolicitudID.Text, EstadoID.Text)
+            Me.UpdateEstadoEnSolicitudTableAdapter.Fill(Me.DataSet1.updateEstadoEnSolicitud, varsolicitudid, varestadoid)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -11,9 +12,10 @@
     End Sub
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Button1.Enabled = False
         TextBox2.Text = Jalar
-        SolicitudID.Text = Jalar
-        EstadoID.Text = "COM"
+        varsolicitudid = Jalar
+        varestadoid = "COM"
         Try
             Me.DocumentosDeSolicitudTableAdapter.Fill(Me.DataSet1.DocumentosDeSolicitud, Jalar)
         Catch ex As System.Exception
@@ -41,6 +43,7 @@
             Try
                 My.Computer.FileSystem.CopyFile(Jalar, destino & "\" & nombre)
                 MsgBox("Documento salvado exitosamente en " & destino, MsgBoxStyle.OkOnly, "SISTEMA")
+                Button1.Enabled = True
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
