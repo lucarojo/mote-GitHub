@@ -208,6 +208,7 @@ Partial Class Form7
         Me.Archivo_Adjunto.HeaderText = "Archivo_Adjunto"
         Me.Archivo_Adjunto.Name = "Archivo_Adjunto"
         Me.Archivo_Adjunto.ReadOnly = True
+        Me.Archivo_Adjunto.Visible = False
         '
         'DataGridViewTextBoxColumn1
         '
