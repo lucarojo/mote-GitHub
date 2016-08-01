@@ -87,9 +87,9 @@ Partial Class agregarcarreras
         TipoGradoIDLabel.AutoSize = True
         TipoGradoIDLabel.Location = New System.Drawing.Point(48, 96)
         TipoGradoIDLabel.Name = "TipoGradoIDLabel"
-        TipoGradoIDLabel.Size = New System.Drawing.Size(77, 13)
+        TipoGradoIDLabel.Size = New System.Drawing.Size(63, 13)
         TipoGradoIDLabel.TabIndex = 5
-        TipoGradoIDLabel.Text = "Tipo Grado ID:"
+        TipoGradoIDLabel.Text = "Tipo Grado:"
         '
         'DataSet1
         '
@@ -295,6 +295,7 @@ Partial Class agregarcarreras
         Me.Controls.Add(TipoGradoIDLabel)
         Me.Controls.Add(Me.CarrerasBindingNavigator)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "agregarcarreras"
         Me.Text = "Mantenimiento de Carreras"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()

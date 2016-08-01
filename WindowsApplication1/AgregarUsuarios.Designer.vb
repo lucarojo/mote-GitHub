@@ -333,6 +333,7 @@ Partial Class AgregarUsuarios
         Me.Controls.Add(Me.ContraseñaTextBox)
         Me.Controls.Add(Me.UsuariosBindingNavigator)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AgregarUsuarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento de Usuarios"

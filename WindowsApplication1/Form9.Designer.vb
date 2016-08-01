@@ -228,6 +228,7 @@ Partial Class Form9
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.ProcedimientoReporteGridControl)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form9"
         Me.Text = "Generar Reporte"
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()

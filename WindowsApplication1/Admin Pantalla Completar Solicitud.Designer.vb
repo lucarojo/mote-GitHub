@@ -25,6 +25,7 @@ Partial Class Form7
         Me.components = New System.ComponentModel.Container()
         Dim Nombre_SolicitanteLabel As System.Windows.Forms.Label
         Dim Numero_Cuenta_SolicitanteLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -33,13 +34,6 @@ Partial Class Form7
         Me.DataSet1 = New WindowsApplication1.DataSet1()
         Me.Numero_Cuenta_SolicitanteTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentosDeSolicitudDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.EstadoID = New System.Windows.Forms.TextBox()
-        Me.SolicitudID = New System.Windows.Forms.TextBox()
-        Me.UpdateEstadoEnSolicitudBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DocumentosDeSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
-        Me.UpdateEstadoEnSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter()
         Me.Archivo_Adjunto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descargar = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -50,6 +44,13 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.EstadoID = New System.Windows.Forms.TextBox()
+        Me.SolicitudID = New System.Windows.Forms.TextBox()
+        Me.UpdateEstadoEnSolicitudBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DocumentosDeSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.DocumentosDeSolicitudTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.DataSet1TableAdapters.TableAdapterManager()
+        Me.UpdateEstadoEnSolicitudTableAdapter = New WindowsApplication1.DataSet1TableAdapters.updateEstadoEnSolicitudTableAdapter()
         Nombre_SolicitanteLabel = New System.Windows.Forms.Label()
         Numero_Cuenta_SolicitanteLabel = New System.Windows.Forms.Label()
         CType(Me.DocumentosDeSolicitudBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +109,7 @@ Partial Class Form7
         Me.Nombre_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Nombre_Solicitante", True))
         Me.Nombre_SolicitanteTextBox.Location = New System.Drawing.Point(117, 20)
         Me.Nombre_SolicitanteTextBox.Name = "Nombre_SolicitanteTextBox"
+        Me.Nombre_SolicitanteTextBox.ReadOnly = True
         Me.Nombre_SolicitanteTextBox.Size = New System.Drawing.Size(219, 20)
         Me.Nombre_SolicitanteTextBox.TabIndex = 55
         '
@@ -126,6 +128,7 @@ Partial Class Form7
         Me.Numero_Cuenta_SolicitanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocumentosDeSolicitudBindingSource, "Numero_Cuenta_Solicitante", True))
         Me.Numero_Cuenta_SolicitanteTextBox.Location = New System.Drawing.Point(500, 20)
         Me.Numero_Cuenta_SolicitanteTextBox.Name = "Numero_Cuenta_SolicitanteTextBox"
+        Me.Numero_Cuenta_SolicitanteTextBox.ReadOnly = True
         Me.Numero_Cuenta_SolicitanteTextBox.Size = New System.Drawing.Size(175, 20)
         Me.Numero_Cuenta_SolicitanteTextBox.TabIndex = 56
         '
@@ -145,62 +148,6 @@ Partial Class Form7
         Me.DocumentosDeSolicitudDataGridView.ReadOnly = True
         Me.DocumentosDeSolicitudDataGridView.Size = New System.Drawing.Size(1016, 318)
         Me.DocumentosDeSolicitudDataGridView.TabIndex = 53
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(847, 404)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(164, 38)
-        Me.Button2.TabIndex = 57
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'EstadoID
-        '
-        Me.EstadoID.Location = New System.Drawing.Point(15, 430)
-        Me.EstadoID.Name = "EstadoID"
-        Me.EstadoID.Size = New System.Drawing.Size(100, 20)
-        Me.EstadoID.TabIndex = 62
-        Me.EstadoID.Visible = False
-        '
-        'SolicitudID
-        '
-        Me.SolicitudID.Location = New System.Drawing.Point(15, 404)
-        Me.SolicitudID.Name = "SolicitudID"
-        Me.SolicitudID.Size = New System.Drawing.Size(100, 20)
-        Me.SolicitudID.TabIndex = 63
-        Me.SolicitudID.Visible = False
-        '
-        'UpdateEstadoEnSolicitudBindingSource
-        '
-        Me.UpdateEstadoEnSolicitudBindingSource.DataMember = "updateEstadoEnSolicitud"
-        Me.UpdateEstadoEnSolicitudBindingSource.DataSource = Me.DataSet1
-        '
-        'DocumentosDeSolicitudTableAdapter
-        '
-        Me.DocumentosDeSolicitudTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
-        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
-        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
-        Me.TableAdapterManager.EstadoTableAdapter = Nothing
-        Me.TableAdapterManager.ServerTableAdapter = Nothing
-        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
-        '
-        'UpdateEstadoEnSolicitudTableAdapter
-        '
-        Me.UpdateEstadoEnSolicitudTableAdapter.ClearBeforeFill = True
         '
         'Archivo_Adjunto
         '
@@ -282,6 +229,62 @@ Partial Class Form7
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
         Me.DataGridViewTextBoxColumn8.Visible = False
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Location = New System.Drawing.Point(847, 404)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(164, 38)
+        Me.Button2.TabIndex = 57
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'EstadoID
+        '
+        Me.EstadoID.Location = New System.Drawing.Point(15, 430)
+        Me.EstadoID.Name = "EstadoID"
+        Me.EstadoID.Size = New System.Drawing.Size(100, 20)
+        Me.EstadoID.TabIndex = 62
+        Me.EstadoID.Visible = False
+        '
+        'SolicitudID
+        '
+        Me.SolicitudID.Location = New System.Drawing.Point(15, 404)
+        Me.SolicitudID.Name = "SolicitudID"
+        Me.SolicitudID.Size = New System.Drawing.Size(100, 20)
+        Me.SolicitudID.TabIndex = 63
+        Me.SolicitudID.Visible = False
+        '
+        'UpdateEstadoEnSolicitudBindingSource
+        '
+        Me.UpdateEstadoEnSolicitudBindingSource.DataMember = "updateEstadoEnSolicitud"
+        Me.UpdateEstadoEnSolicitudBindingSource.DataSource = Me.DataSet1
+        '
+        'DocumentosDeSolicitudTableAdapter
+        '
+        Me.DocumentosDeSolicitudTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlumnosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.Detalle_CarrerasTableAdapter = Nothing
+        Me.TableAdapterManager.Detalle_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosTableAdapter = Nothing
+        Me.TableAdapterManager.EstadoTableAdapter = Nothing
+        Me.TableAdapterManager.ServerTableAdapter = Nothing
+        Me.TableAdapterManager.SolicitudesTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_de_DocumentoTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_GradoTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'UpdateEstadoEnSolicitudTableAdapter
+        '
+        Me.UpdateEstadoEnSolicitudTableAdapter.ClearBeforeFill = True
+        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -300,6 +303,7 @@ Partial Class Form7
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form7"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Completar Solicitud"
