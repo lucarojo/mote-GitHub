@@ -64,6 +64,7 @@ Partial Class Form3
         Me.CarrerasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionesAvanzadasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton8 = New System.Windows.Forms.ToolStripButton()
         CType(Me.TipoDeDocumentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,7 +312,7 @@ Partial Class Form3
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton6, Me.ToolStripButton7, Me.ToolStripDropDownButton1, Me.ToolStripDropDownButton2, Me.ToolStripButton8})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(499, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(530, 25)
         Me.ToolStrip2.TabIndex = 56
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -354,7 +355,7 @@ Partial Class Form3
         '
         'ToolStripDropDownButton2
         '
-        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoToolStripMenuItem, Me.OpcionesAvanzadasToolStripMenuItem, Me.ToolStripMenuItem3})
+        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoToolStripMenuItem, Me.OpcionesAvanzadasToolStripMenuItem, Me.AboutToolStripMenuItem, Me.ToolStripMenuItem3})
         Me.ToolStripDropDownButton2.Image = CType(resources.GetObject("ToolStripDropDownButton2.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
@@ -391,6 +392,12 @@ Partial Class Form3
         Me.OpcionesAvanzadasToolStripMenuItem.Name = "OpcionesAvanzadasToolStripMenuItem"
         Me.OpcionesAvanzadasToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
         Me.OpcionesAvanzadasToolStripMenuItem.Text = "Opciones Avanzadas"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'ToolStripMenuItem3
         '
@@ -483,4 +490,5 @@ Partial Class Form3
     Friend WithEvents OpcionesAvanzadasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripButton8 As ToolStripButton
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class

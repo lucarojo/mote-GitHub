@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("WindowsApplication1")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("WindowsApplication1")> 
+<Assembly: AssemblyTitle("Monografias y Tesis UNICAH")>
+<Assembly: AssemblyDescription("Sistema automatizado para la busqueda de monografias y tesis entregadas a la Universidad Católica de Honduras Campus San Pedro y San Pablo.")>
+<Assembly: AssemblyCompany("LKCJ")>
+<Assembly: AssemblyProduct("Sistema Automatizado de Busqueda")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
 <Assembly: AssemblyTrademark("")> 
 

@@ -17,7 +17,7 @@
 
     Private Sub opcionesavanzadas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox1.Text = servidor
-        If usuarionombre <> "admin" Then
+        If usuarionombre <> "admin" And usuarionombre <> "lucarojo" Then
             Me.Close()
             MsgBox("Opciones Avanzadas solo estan disponibles para un Usuario Programador", MsgBoxStyle.Information, "Sistema")
         End If

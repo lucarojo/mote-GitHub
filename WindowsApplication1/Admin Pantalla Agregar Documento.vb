@@ -1,5 +1,5 @@
 ﻿Public Class Form5
-
+    Dim cond As Integer = 0
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet11.Tipo_de_Documento' table. You can move, or remove it, as needed.
         'Me.Tipo_de_DocumentoTableAdapter.Fill(Me.DataSet11.Tipo_de_Documento)
@@ -13,12 +13,12 @@
         'Me.DocumentosTableAdapter.Fill(Me.DataSet1.Documentos)
         ComboBox1.Text = ""
         ComboBox2.Text = ""
-        AñoDateTimePicker.Value = Today
+        'AñoDateTimePicker.Value = Now
         Dim rnum As Random
         Dim num As Integer
         rnum = New Random
         num = rnum.Next(1, 999999999)
-
+        'AñoDateTimePicker.Value = Now
         'DocumentoIDTextBox.Enabled = False
         'NombreTextBox.Enabled = False
         'AñoTextBox.Enabled = False
@@ -84,6 +84,10 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Try
+            If cond = 0 Then
+                MsgBox("Debe seleccionar la fecha del documento", MsgBoxStyle.Critical, "Sistema")
+                Exit Sub
+            End If
             Me.Validate()
             Me.DocumentosBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.DataSet1)
@@ -153,5 +157,13 @@
 
     Private Sub CarrerasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CarrerasToolStripMenuItem.Click
         agregarcarreras.Show()
+    End Sub
+
+    Private Sub AñoDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles AñoDateTimePicker.ValueChanged
+        cond = 1
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutBox1.Show()
     End Sub
 End Class

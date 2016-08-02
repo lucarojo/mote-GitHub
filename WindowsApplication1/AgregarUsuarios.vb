@@ -13,7 +13,7 @@
         Me.UsuariosTableAdapter.Fill(Me.DataSet1.Usuarios)
         'TODO: This line of code loads data into the 'DataSet1.Usuarios' table. You can move, or remove it, as needed.
         Me.UsuariosTableAdapter.Fill(Me.DataSet1.Usuarios)
-        If usuarionombre <> "admin" Then
+        If usuarionombre <> "admin" And usuarionombre <> "lucarojo" Then
             Me.Close()
             MsgBox("Mantenimiento de Usuarios solo esta disponibles para un Usuario Programador", MsgBoxStyle.Information, "Sistema")
         End If
