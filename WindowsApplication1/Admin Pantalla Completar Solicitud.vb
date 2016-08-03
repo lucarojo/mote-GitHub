@@ -13,7 +13,7 @@
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button1.Enabled = False
-        TextBox2.Text = Jalar
+        'TextBox2.Text = Jalar
         varsolicitudid = Jalar
         varestadoid = "COM"
         Try

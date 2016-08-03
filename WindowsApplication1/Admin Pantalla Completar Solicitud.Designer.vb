@@ -103,6 +103,7 @@ Partial Class Form7
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 54
+        Me.TextBox2.Visible = False
         '
         'Nombre_SolicitanteTextBox
         '
